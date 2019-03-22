@@ -1,0 +1,189 @@
+// Bootstrap functions
+//
+// Utility mixins and functions for evaluating source code across our variables, maps, and mixins.
+
+// Ascending
+// Used to evaluate Sass maps like our grid breakpoints.
+@mixin _assert-ascending($map, $map-name) {
+  $prev-key: null;
+  $prev-num: null;
+  @each $key, $num in $map {
+    @if $prev-num == null or unit($num) == "%" or unit($prev-num) == "%" {
+      // Do nothing
+    } @else if not comparable($prev-num, $num) {
+      @warn "Potentially invalid value for #{$map-name}: This map must be in ascending order, but key '#{$key}' has value #{$num} whose unit makes it incomparable to #{$prev-num}, the value of the previous key '#{$prev-key}' !";
+    } @else if $prev-num >= $num {
+      @warn "Invalid value for #{$map-name}: This map must be in ascending order, but key '#{$key}' has value #{$num} which isn't greater than #{$prev-num}, the value of the previous key '#{$prev-key}' !";
+    }
+    $prev-key: $key;
+    $prev-num: $num;
+  }
+}
+
+// Starts at zero
+// Used to ensure the min-width of the lowest breakpoint starts at 0.
+@mixin _assert-starts-at-zero($map, $map-name: "$grid-breakpoints") {
+  $values: map-values($map);
+  $first-value: nth($values, 1);
+  @if $first-value != 0 {
+    @warn "First breakpoint in #{$map-name} must start at 0, but starts at #{$first-value}.";
+  }
+}
+
+// Replace `$search` with `$replace` in `$string`
+// Used on our SVG icon backgrounds for custom forms.
+//
+// @author Hugo Giraudel
+// @param {String} $string - Initial string
+// @param {String} $search - Substring to replace
+// @param {String} $replace ('') - New value
+// @return {String} - Updated string
+@function str-replace($string, $search, $replace: "") {
+  $index: str-index($string, $search);
+
+  @if $index {
+    @return str-slice($string, 1, $index - 1) + $replace + str-replace(str-slice($string, $index + str-length($search)), $search, $replace);
+  }
+
+  @return $string;
+}
+
+// Color contrast
+@function color-yiq($color, $dark: $yiq-text-dark, $light: $yiq-text-light) {
+  $r: red($color);
+  $g: green($color);
+  $b: blue($color);
+
+  $yiq: (($r * 299) + ($g * 587) + ($b * 114)) / 1000;
+
+  @if ($yiq >= $yiq-contrasted-threshold) {
+    @return $dark;
+  } @else {
+    @return $light;
+  }
+}
+
+// Retrieve color Sass maps
+@function color($key: "blue") {
+  @return map-get($colors, $key);
+}
+
+@function theme-color($key: "primary") {
+  @return map-get($theme-colors, $key);
+}
+
+@function gray($key: "100") {
+  @return map-get($grays, $key);
+}
+
+// Request a theme color level
+@function theme-color-level($color-name: "primary", $level: 0) {
+  $color: theme-color($color-name);
+  $color-base: if($level > 0, $black, $white);
+  $level: abs($level);
+
+  @return mix($color-base, $color, $level * $theme-color-interval);
+}
+
+/**
+ * Copyright FastTrack360.
+ *
+ * Use of this source code is governed under the Apache License, Version 2.0
+ * found at http://www.apache.org/licenses/LICENSE-2.0.
+ */
+
+:root {
+	--ft-color-black: #000;
+	--ft-color-white: #fff;
+
+	--ft-color-grey-100: rgb(61, 110, 110);
+	--ft-color-grey-200: rgb(233, 235, 237);
+	--ft-color-grey-300: rgb(216, 220, 222);
+	--ft-color-grey-400: rgb(194, 200, 204);
+	--ft-color-grey-500: rgb(135, 146, 157);
+	--ft-color-grey-600: rgb(104, 115, 125);
+	--ft-color-grey-700: rgb(73, 84, 92);
+	--ft-color-grey-800: rgb(47, 57, 65);
+
+	--ft-color-green: rgb(94, 174, 145);
+	--ft-color-yellow: rgb(245, 161, 51);
+	--ft-color-red: #DB4B4B;
+
+	--ft-font-family-monospace: SFMono-Regular, Consolas, 'Liberation Mono', Menlo, Courier, monospace;
+	--ft-font-family-system: 'Inter', system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen-Sans, Ubuntu, Cantarell, 'Helvetica Neue', Arial, sans-serif;
+
+	--ft-font-weight-thin: 100;
+	--ft-font-weight-extralight: 200;
+	--ft-font-weight-light: 300;
+	--ft-font-weight-regular: 400;
+	--ft-font-weight-medium: 500;
+	--ft-font-weight-semibold: 600;
+	--ft-font-weight-bold: 700;
+	--ft-font-weight-ultrabold: 800;
+	--ft-font-weight-heavy: 900;
+
+	--ft-color-primary: #2764C4;
+	--ft-color-secondary: #98C0FF;
+	--ft-color-tertiary: var(--ft-color-white);
+
+	--ft-color-success: #46b5ab;
+	--ft-color-info: #6cb8ff;
+	--ft-color-warning: #ffd209;
+	--ft-color-danger: var(--ft-color-red) ;
+
+	--ft-color-dark: #A8AAB7;
+	--ft-color-light: #333F52;
+
+	--ft-body-bg: #fff;
+	--ft-body: var(--ft-color-dark);
+
+	--ft-link-color: var(--ft-color-primary);
+	--ft-link-color-hover: darken(var(--ft-color-primary), 15%);
+
+}
+
+
+// Grid breakpoints
+//
+// Define the minimum dimensions at which your layout will change,
+// adapting to different screen sizes, for use in media queries.
+
+$grid-breakpoints: (
+  xs: 0,
+  sm: 576px,
+  md: 768px,
+  lg: 992px,
+  xl: 1200px
+) !default;
+
+@include _assert-ascending($grid-breakpoints, "$grid-breakpoints");
+@include _assert-starts-at-zero($grid-breakpoints, "$grid-breakpoints");
+
+
+// Grid containers
+//
+// Define the maximum width of `.container` for different screen sizes.
+
+$container-max-widths: (
+  sm: 540px,
+  md: 720px,
+  lg: 960px,
+  xl: 1140px
+) !default;
+
+@include _assert-ascending($container-max-widths, "$container-max-widths");
+
+
+// Grid columns
+//
+// Set the number of columns and specify the width of the gutters.
+
+$grid-columns:                12 !default;
+$grid-gutter-width:           30px !default;
+
+// Components
+//
+// Define common padding and border radius sizes and more.
+
+$line-height-lg:              1.5 !default;
+$line-height-sm:              1.5 !default;

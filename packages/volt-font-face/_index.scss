@@ -1,0 +1,20 @@
+// Font Support:
+// - woff2: Chrome, Firefox, IE Edge
+// - woff: IE 9+, Safari, all others
+@if variable-exists(volt-font-url) {
+    @font-face {
+        font-family: 'Inter';
+        font-weight: 400;
+        src: url(#{$volt-font-url}/inter/Inter-Regular.woff2) format("woff2"),
+             url(#{$volt-font-url}/inter/Inter-Regular.woff) format("woff");
+    }
+
+    @font-face {
+        font-family: 'Inter';
+        font-weight: 700;
+        src: url(#{$volt-font-url}/inter/Inter-Bold.woff2) format("woff2"),
+             url(#{$volt-font-url}/inter/Inter-Bold.woff) format("woff");
+    }
+} @else {
+    @error "The variable `$inter-font-url` must be provided if using the `@fasttrack360/volt-font-face` package.";
+}
