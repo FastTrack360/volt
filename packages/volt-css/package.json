@@ -1,0 +1,43 @@
+{
+	"name": "@fasttrack360/volt-css",
+	"description": "CSS repo for building Volt Design System",
+	"version": "0.1.3",
+	"author": "Karthik Rajendran <karthik97live@gmail.com>",
+	"main": "volt.css",
+	"style": "volt.css",
+	"files": [
+			"*.css",
+	],
+	"repository": {
+			"type": "git",
+			"url": "git+https://github.com/fasttrack360/volt.git"
+	},
+	"publishConfig": {
+			"registry": "https://registry.npmjs.org/",
+			"access": "public"
+	},
+	"bugs": {
+			"url": "https://github.com/fasttrack360/volt/issues"
+	},
+	"homepage": "https://github.com/fasttrack360/volt",
+	"license": "Apache-2.0",
+	"scripts": {
+			"start": "npm generate-css",
+			"generate-css": "rm -rf *.css && node-sass --include-path src/scss src/scss/volt.scss public/volt.css && postcss public/volt.css > public/volt.min.css && postcss public/volt.min.css --map --use autoprefixer css-mqpacker cssnano --replace"
+	},
+	"devDependencies": {
+			"@fasttrack360/volt-vanilla": "0.0.1",
+			"autoprefixer": "^9.0.1",
+			"css-mqpacker": "^7.0.0",
+			"cssnano": "^4.1.0",
+			"fs-extra": "^7.0.1",
+			"glob": "^7.1.3",
+			"live-server": "1.2.1",
+			"node-sass": "^4.11.0",
+			"node-sass-tilde-importer": "1.0.0",
+			"nodemon": "^1.18.10",
+			"p-map": "^2.0.0",
+			"parallelshell": "^3.0.2",
+			"postcss-cli": "^6.1.1"
+	}
+}
