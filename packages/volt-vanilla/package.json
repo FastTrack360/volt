@@ -1,7 +1,7 @@
 {
     "name": "@fasttrack360/volt-vanilla",
     "description": "CSS and Sass mixins for building Volt Design System",
-    "version": "0.0.1",
+    "version": "0.0.2",
     "author": "Karthik Rajendran <karthik97live@gmail.com>",
     "main": "src/scss/volt.scss",
     "repository": {
