@@ -1,0 +1,70 @@
+// stylelint-disable declaration-no-important
+
+//
+// Text
+//
+
+.txt-monospace { font-family: $font-family-monospace !important; }
+
+// Alignment
+
+.txt-justify  { text-align: justify !important; }
+.txt-wrap     { white-space: normal !important; }
+.txt-nowrap   { white-space: nowrap !important; }
+.txt-truncate { @include text-truncate; }
+
+// Responsive alignment
+
+// @each $breakpoint in map-keys($grid-breakpoints) {
+//   @include media-breakpoint-up($breakpoint) {
+//     $infix: breakpoint-infix($breakpoint, $grid-breakpoints);
+
+//     .text#{$infix}-left   { text-align: left !important; }
+//     .text#{$infix}-right  { text-align: right !important; }
+//     .text#{$infix}-center { text-align: center !important; }
+//   }
+// }
+
+// Transformation
+
+.txt-lowercase  { text-transform: lowercase !important; }
+.txt-uppercase  { text-transform: uppercase !important; }
+.txt-capitalize { text-transform: capitalize !important; }
+
+// Weight and italics
+
+.fw-100   { font-weight: 100 !important; }
+.fw-200   { font-weight: 200 !important; }
+.fw-300   { font-weight: 300 !important; }
+.fw-500   { font-weight: 500 !important; }
+.fw-600   { font-weight: 600 !important; }
+.fw-700   { font-weight: 700 !important; }
+.fw-800   { font-weight: 800 !important; }
+.fw-900   { font-weight: 900 !important; }
+
+
+// Contextual colors
+
+.txt-white { color: $white !important; }
+
+// @each $color, $value in $theme-colors {
+//   @include text-emphasis-variant(".text-#{$color}", $value);
+// }
+
+.txt-body { color: $body-color !important; }
+.txt-muted { color: $text-muted !important; }
+
+.txt-black-50 { color: rgba($black, .5) !important; }
+.txt-white-50 { color: rgba($white, .5) !important; }
+
+// Misc
+
+.txt-decoration-none { text-decoration: none !important; }
+
+.txt-break {
+  word-break: break-word !important; // IE & < Edge 18
+  overflow-wrap: break-word !important;
+}
+
+// Reset
+.txt-reset { color: inherit !important; }

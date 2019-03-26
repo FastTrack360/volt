@@ -1,0 +1,205 @@
+// Button mixins
+
+@mixin ft-button($important: null) {
+
+	box-sizing: border-box $important;
+	display: inline-block $important;
+	vertical-align: middle $important;
+	white-space: nowrap $important;
+	font-family: $ft-font-family $important;
+	cursor: pointer $important;
+	margin: 0 $important;
+	padding: ft-spacer(1.0) ft-spacer(4) $important;
+	box-shadow: 0 3px 1px -2px rgba(0,0,0,.2),  0 1px 4px 0 rgba(0,0,0,.12);
+
+	line-height: 24px $important;
+
+	border-width: 1px $important;
+	border-style: solid $important;
+
+	font-size: 1.0rem $important;
+	font-weight: 500 $important;
+	font-family: $ft-font-family $important;
+	user-select: none $important;
+	text-decoration: none $important;
+
+	letter-spacing: 0.2px$important;
+
+	border-radius: $ft-border__radius__base $important;
+
+	overflow: visible $important;
+	min-height: 30px $important;
+
+	// Unique styles for the base, button start here.
+	background-color: $ft-color__blue $important;
+
+	border-color: transparent $important;
+	color: $ft-color__white $important;
+
+	transition: background 0.4s cubic-bezier(.645, .045, .355, 1), box-shadow 380ms cubic-bezier(.4,0,.2,1);
+
+	&:hover {
+		color: $ft-color__white $important;
+	}
+	&:active {
+		box-shadow: 0 5px 5px -3px rgba(0,0,0,.2), 0 8px 10px 1px rgba(0,0,0,.14), 0 3px 14px 2px rgba(0,0,0,.12);
+	}
+
+	&:focus {
+		outline: none;
+		box-shadow: 0 0 0 .1em #fff, 0 0 0 .2em lighten($color: $ft-color__blue-600, $amount: 40);
+
+
+	}
+}
+
+@mixin ft-button--secondary($important: null) {
+	background-color: $ft-color__blue-100 $important;
+	border-color: darken($color: $ft-color__blue-100, $amount: 12) $important;
+	color: $ft-color__blue-500 $important;
+
+	&:hover,
+	&:active {
+		background-color: $ft-color__blue-300 $important;
+		border-color: $ft-color__blue $important;
+		color: $ft-color__white $important;
+	}
+
+
+}
+
+@mixin ft-button--tertiary($important: null) {
+	background-color: $ft-color__white $important;
+	border-color: $ft-color__blue $important;
+	color: $ft-color__blue $important;
+
+	&:hover,
+	&:active {
+		background-color: darken($color: $ft-color__blue, $amount: 2.75) $important;
+		color:   $ft-color__white $important;
+		border-color: lighten($color: $ft-color__blue, $amount: 1.5) $important;
+	}
+
+}
+
+@mixin ft-button--danger($important: null) {
+	background-color: $ft-color__white $important;
+	border-color: $ft-color__red $important;
+	color: $ft-color__red $important;
+
+	&:hover,
+	&:active {
+		background-color: $ft-color__red $important;
+		border-color: $ft-color__red $important;
+		color: $ft-color__white $important;
+	}
+
+}
+
+@mixin ft-button--danger__full($important: null) {
+	background-color: $ft-color__red $important;
+	border-color: $ft-color__red $important;
+	color: $ft-color__white $important;
+
+	&:hover,
+	&:active {
+		background-color: $ft-color__white $important;
+		border-color: $ft-color__red $important;
+		color: $ft-color__red $important;
+	}
+
+}
+
+@mixin ft-button--link($important: null) {
+	color: $ft-color__blue $important;
+	background: none $important;
+	border-color: transparent $important;
+	box-shadow: none $important;
+
+	&:hover,
+	&:active,
+	&:focus {
+		background: none;
+		border-color: transparent;
+		color: $ft-color__blue $important;
+	}
+}
+
+@mixin ft-button--txt($important: null) {
+	color: $ft-color__black-300 $important;
+	background: none $important;
+	border-color: $ft-color__gray $important;
+
+
+	&:hover,
+	&:active,
+	&:focus {
+		background: $ft-color__blue $important;;
+		border-color: transparent;
+		color: $ft-color__white $important;
+	}
+}
+
+@mixin ft-button--sm($important: null) {
+	font-size: 0.90rem $important;
+	line-height: 16px $important;
+	padding: ft-spacer(1.0) ft-spacer(3.0) $important;
+	min-height: 20px $important;
+}
+
+@mixin ft-button--lg($important: null) {
+	font-size: 1.025rem $important;
+	line-height: 32px $important;
+	padding: ft-spacer(1.0) ft-spacer(4.0) $important;
+	min-height: 30px $important;
+}
+
+@mixin ft-button--block($important: null) {
+	width: 100% $important;
+	text-align: center $important;
+}
+
+// Disabled
+// used either an attribute or a class, depending on the use case.
+@mixin ft-button--disabled($important: null) {
+
+	&,
+	&.ft-button--secondary,
+	&.ft-button--tertiary,
+	&.ft-button--danger,
+	&.ft-button--link &:visited,
+	&:hover,
+	&:active,
+	&:focus {
+		cursor: not-allowed $important;
+
+		color: $ft-color__gray $important;
+		background-color: $ft-color__white $important;
+		border-color: lighten($color: $ft-color__gray, $amount: 3) $important;
+
+		box-shadow: none;
+
+		&.ft-button--hide {
+			background-color: transparent $important;
+			color: $ft-color__white $important;
+			border-color: $ft-color__white $important;
+			opacity: 0.35;
+		}
+	}
+}
+
+
+// Buttons with icons
+@mixin ft-button-icon($important: null) {
+	display: flex $important;
+	flex-direction: row $important;
+	align-items: center $important;
+	justify-content: center $important;
+}
+
+@mixin ft-button-icon__icon($important: null) {
+	flex: none $important;
+	margin: 0 $important;
+	margin-right: ft-spacer(1.5) $important;
+	fill: currentColor $important;
+}

@@ -1,0 +1,408 @@
+$ft-border__radius__base: 4px;
+$ft-border__radius__big: 6px;
+$ft-border__radius__full: 50%;
+$ft-border__radius__sides: 9999px;
+$ft-breakpoint__large: 1025px;
+$ft-breakpoint__large__value: 1025;
+$ft-breakpoint__medium: 700px;
+$ft-breakpoint__medium__value: 700;
+$ft-breakpoint__small: 481px;
+$ft-breakpoint__small__value: 481;
+$ft-breakpoint__split-view__medium: 1060px;
+$ft-breakpoint__split-view__medium__value: 1060;
+$ft-breakpoint__split-view__small: 769px;
+$ft-breakpoint__split-view__small__value: 769;
+
+//
+// Colors
+//
+$ft-color-body: #354052;
+$ft-color-body__bg: #fff;
+$ft-color-card__bg: #FCFCFC;
+
+
+$ft-color__black-300: #676d73;
+$ft-color__black: #2f3033;
+$ft-color__gray-200: #fafafa;
+$ft-color__gray-300: #e9eced;
+$ft-color__gray: #d3d4d5;
+$ft-color__white: #ffffff;
+
+$ft-color__blue: #2764C4;
+$ft-color__blue-100: lighten($ft-color__blue, 40);
+$ft-color__blue-200: lighten($ft-color__blue, 25);
+$ft-color__blue-300: lighten($ft-color__blue, 15);
+$ft-color__blue-500: darken($ft-color__blue, 15);
+$ft-color__blue-600: darken($ft-color__blue, 25);
+$ft-color__blue-700: darken($ft-color__blue, 35);
+
+$ft-color__green-100: #e1fdf3;
+$ft-color__green-200: #c6f7da;
+$ft-color__green-300: #73e4a2;
+$ft-color__green: #2db783;
+$ft-color__green-500: #109e78;
+$ft-color__green-600: #0f6648;
+
+$ft-color__yellow-100: #fdf7e7;
+$ft-color__yellow-200: #ffebb3;
+$ft-color__yellow-300: #ffdd80;
+$ft-color__yellow: #febe14;
+$ft-color__yellow-500: #d48300;
+$ft-color__yellow-600: #8a5500;
+
+$ft-color__red-100: #ffeff0;
+$ft-color__red-200: #ffd9d9;
+$ft-color__red-300: #ffb0b0;
+$ft-color__red: #ff5a5f;
+$ft-color__red-500: #cc3553;
+$ft-color__red-600: #76012c;
+
+
+// @deprecated
+$ft-spacer__unit: 8;
+// Maps to Black 300
+// @deprecated
+$ft-color__ui__slate: #6d7273;
+// Maps to Gray 300
+// @deprecated
+$ft-color__ui__base: #e6f0f2;
+// Maps to Blue
+// @deprecated
+$ft-color__ui__main: #0abae6;
+// Maps to Yellow
+// @deprecated
+$ft-color__ui__celebrate: #fbe002;
+// Maps to Indigo
+// @deprecated
+$ft-color__ui__betterment: #455fcf;
+// Maps to Purple
+// @deprecated
+$ft-color__ui__crafty: #8b71de;
+// Maps to Gray 200
+// @deprecated
+$ft-color__ui__faint: #f7fafb;
+// Maps to Gray 300
+// @deprecated
+$ft-color__ui__light: #f0f6f7;
+// Maps to Gray
+// @deprecated
+$ft-color__ui__pale: #ced6d9;
+// Maps to Black 300
+// @deprecated
+$ft-color__ui__muted: #858b8c;
+// Maps to Black
+// @deprecated
+$ft-color__ui__dark: #333333;
+// Maps to Black
+// @deprecated
+$ft-color__ui__black: #000000;
+// Maps to White
+// @deprecated
+$ft-color__ui__white: #ffffff;
+// Maps to Blue
+// @deprecated
+$ft-color__ui__sky: #3f93f3;
+// Maps to Blue 300
+// @deprecated
+$ft-color__ui__sky_light: #70acf1;
+// Maps to Blue 400
+// @deprecated
+$ft-color__ui__sky-faint: #94beee;
+// Maps to Blue 500
+// @deprecated
+$ft-color__ui__sky-dark: #287ddd;
+// Maps to Green
+// @deprecated
+$ft-color__ui__good-news: #3ac392;
+// Maps to Green 300
+// @deprecated
+$ft-color__ui__good-news-light: #62cca7;
+// Maps to Green 200
+// @deprecated
+$ft-color__ui__good-news-faint: #93dbc2;
+// Maps to Red
+// @deprecated
+$ft-color__ui__bad-news: #f16a4f;
+// Maps to Red 300
+// @deprecated
+$ft-color__ui__bad-news-light: #f28974;
+// Maps to Red 200
+// @deprecated
+$ft-color__ui__bad-news-faint: #f2a494;
+// Maps to Blue or Indigo
+// @deprecated
+$ft-color__ui__brand: #f27802;
+// Maps to Blue 200 or Indigo 200
+// @deprecated
+$ft-color__ui__brand-light: #f0913a;
+// Maps to Blue 300 or Indigo 300
+// @deprecated
+$ft-color__ui__brand-faint: #f0a86e;
+// Maps to Yellow
+// @deprecated
+$ft-color__ui__gold: #ff9f02;
+// Maps to Yellow 300
+// @deprecated
+$ft-color__ui__gold-light: #ffb742;
+// Maps to Yellow 200
+// @deprecated
+$ft-color__ui__gold-faint: #ffcb78;
+// Maps to Black
+// @deprecated
+$ft-color__text__base: #333333;
+// Maps to Black
+// @deprecated
+$ft-color__text__dark: #333333;
+// Maps to Black 300
+// @deprecated
+$ft-color__text__slate: #6d7273;
+// Maps to Blue
+// @deprecated
+$ft-color__text__main: #08aed7;
+// Maps to Yellow
+// @deprecated
+$ft-color__text__celebrate: #fbe002;
+// Maps to Indigo
+// @deprecated
+$ft-color__text__betterment: #455fcf;
+// Maps to Purple
+// @deprecated
+$ft-color__text__crafty: #8b71de;
+// Maps to Black 300
+// @deprecated
+$ft-color__text__muted: #858b8c;
+// Maps to Gray
+// @deprecated
+$ft-color__text__pale: #ced6d9;
+// Maps to Green
+// @deprecated
+$ft-color__text__good-news: #3ac392;
+// Maps to Blue or Indigo
+// @deprecated
+$ft-color__text__brand: #f27802;
+// Maps to Blue
+// @deprecated
+$ft-color__text__sky: #3f93f3;
+// Maps to Blue 500
+// @deprecated
+$ft-color__text__sky-dark: #287ddd;
+// Maps to Red
+// @deprecated
+$ft-color__text__bad-news: #f16a4f;
+// Maps to Red 300
+// @deprecated
+$ft-color__text__bad-news-light: #f28974;
+// Maps to White
+// @deprecated
+$ft-color__text__white: #ffffff;
+// Maps to Blue
+// @deprecated
+$ft-color__link__base: #3f93f3;
+// Maps to Blue 300
+// @deprecated
+$ft-color__link__light: #70acf1;
+// Maps to Blue 200
+// @deprecated
+$ft-color__link__faint: #94beee;
+// Maps to Red
+// @deprecated
+$ft-color__link__bad-news: #f16a4f;
+// Maps to White
+// @deprecated
+$ft-color__link__white: #ffffff;
+// @deprecated
+$ft-font__super__1__size: 56px;
+// @deprecated
+$ft-font__super__1__line-height: 1.1;
+// @deprecated
+$ft-font__super__1__weight: 500;
+// @deprecated
+$ft-font__super__1__responsive__size: 64px;
+// @deprecated
+$ft-font__super__1__responsive__line-height: 1.1;
+// @deprecated
+$ft-font__super__1__responsive__weight: 500;
+// @deprecated
+$ft-font__heading__1__size: 32px;
+// @deprecated
+$ft-font__heading__1__line-height: 1.3;
+// @deprecated
+$ft-font__heading__1__weight: 500;
+// @deprecated
+$ft-font__heading__1__responsive__size: 48px;
+// @deprecated
+$ft-font__heading__1__responsive__line-height: 1.1;
+// @deprecated
+$ft-font__heading__1__responsive__weight: 500;
+// @deprecated
+$ft-font__heading__2__size: 30px;
+// @deprecated
+$ft-font__heading__2__line-height: 1.3;
+// @deprecated
+$ft-font__heading__2__weight: 500;
+// @deprecated
+$ft-font__heading__2__responsive__size: 40px;
+// @deprecated
+$ft-font__heading__2__responsive__line-height: 1.2;
+// @deprecated
+$ft-font__heading__2__responsive__weight: 500;
+// @deprecated
+$ft-font__heading__3__size: 24px;
+// @deprecated
+$ft-font__heading__3__line-height: 1.4;
+// @deprecated
+$ft-font__heading__3__weight: 500;
+// @deprecated
+$ft-font__heading__3__responsive__size: 32px;
+// @deprecated
+$ft-font__heading__3__responsive__line-height: 1.3;
+// @deprecated
+$ft-font__heading__3__responsive__weight: 500;
+// @deprecated
+$ft-font__heading__4__size: 20px;
+// @deprecated
+$ft-font__heading__4__line-height: 1.4;
+// @deprecated
+$ft-font__heading__4__weight: 500;
+// @deprecated
+$ft-font__heading__4__responsive__size: 24px;
+// @deprecated
+$ft-font__heading__4__responsive__line-height: 1.4;
+// @deprecated
+$ft-font__heading__4__responsive__weight: 500;
+// @deprecated
+$ft-font__heading__5__size: 16px;
+// @deprecated
+$ft-font__heading__5__line-height: 1.6;
+// @deprecated
+$ft-font__heading__5__weight: 500;
+// @deprecated
+$ft-font__heading__5__responsive__size: 20px;
+// @deprecated
+$ft-font__heading__5__responsive__line-height: 1.5;
+// @deprecated
+$ft-font__heading__5__responsive__weight: 500;
+// @deprecated
+$ft-font__heading__6__size: 14px;
+// @deprecated
+$ft-font__heading__6__line-height: 1.6;
+// @deprecated
+$ft-font__heading__6__weight: 500;
+// @deprecated
+$ft-font__heading__6__responsive__size: 16px;
+// @deprecated
+$ft-font__heading__6__responsive__line-height: 1.6;
+// @deprecated
+$ft-font__heading__6__responsive__weight: 500;
+// @deprecated
+$ft-font__text__1__size: 20px;
+// @deprecated
+$ft-font__text__1__line-height: 1.6;
+// @deprecated
+$ft-font__text__1__responsive__size: 24px;
+// @deprecated
+$ft-font__text__1__responsive__line-height: 1.5;
+// @deprecated
+$ft-font__text__2__size: 16px;
+// @deprecated
+$ft-font__text__2__line-height: 1.6;
+// @deprecated
+$ft-font__text__3__size: 14px;
+// @deprecated
+$ft-font__text__3__line-height: 1.6;
+// @deprecated
+$ft-font__text__4__size: 12px;
+// @deprecated
+$ft-font__text__4__line-height: 1.6;
+// @deprecated
+$ft-form__input__padding__all: 6px 12px;
+// @deprecated
+$ft-form__input__padding__sides: 12px;
+// @deprecated
+$ft-form__input__padding__ends: 6px;
+// @deprecated
+$ft-form__input__line-height: 1.5;
+// @deprecated
+$ft-wrap-snap__large: 946px;
+// @deprecated
+$ft-wrap-snap__medium: 668px;
+// @deprecated
+$ft-wrap-snap__small: 449px;
+// @deprecated
+$ft-avatar__size__xsmall: 20px;
+// @deprecated
+$ft-avatar__size__small: 32px;
+// @deprecated
+$ft-avatar__size__medium: 48px;
+// @deprecated
+$ft-avatar__size__large: 72px;
+// @deprecated
+$ft-avatar__size__xlarge: 124px;
+$ft-font__family__base: Mark, Avenir, Helvetica, Arial, sans-serif;
+$ft-font__family__monospace: 'Source Code Pro', monospace;
+$ft-font__letter-spacing__loose: 1px;
+$ft-font__letter-spacing__tight: -1px;
+$ft-font__letter-spacing__extra-tight: -2px;
+$ft-font__line-height__base: 1.6;
+$ft-font__line-height__tight: 1.4;
+$ft-font__line-height__loose: 1.9;
+$ft-font__weight__normal: 400;
+$ft-font__weight__bold: 700;
+$ft-font__title__1__size: 28px;
+$ft-font__title__1__line-height: 32px;
+$ft-font__title__1__weight: 700;
+$ft-font__title__1__responsive__size: 40px;
+$ft-font__title__1__responsive__line-height: 44px;
+$ft-font__title__1__responsive__weight: 700;
+$ft-font__title__2__size: 24px;
+$ft-font__title__2__line-height: 28px;
+$ft-font__title__2__weight: 700;
+$ft-font__title__2__responsive__size: 32px;
+$ft-font__title__2__responsive__line-height: 40px;
+$ft-font__title__2__responsive__weight: 700;
+$ft-font__title__3__size: 22px;
+$ft-font__title__3__line-height: 28px;
+$ft-font__title__3__weight: 700;
+$ft-font__title__3__responsive__size: 24px;
+$ft-font__title__3__responsive__line-height: 32px;
+$ft-font__title__3__responsive__weight: 700;
+$ft-font__title__4__size: 20px;
+$ft-font__title__4__line-height: 28px;
+$ft-font__title__4__weight: 700;
+$ft-font__title__5__size: 18px;
+$ft-font__title__5__line-height: 24px;
+$ft-font__title__5__weight: 700;
+$ft-font__title__6__size: 16px;
+$ft-font__title__6__line-height: 24px;
+$ft-font__title__6__weight: 700;
+$ft-font__title__7__size: 14px;
+$ft-font__title__7__line-height: 20px;
+$ft-font__title__7__weight: 700;
+$ft-font__title__8__size: 12px;
+$ft-font__title__8__line-height: 18px;
+$ft-font__title__8__weight: 700;
+$ft-font__body__1__size: 16px;
+$ft-font__body__1__line-height: 24px;
+$ft-font__body__2__size: 14px;
+$ft-font__body__2__line-height: 20px;
+$ft-font__body__3__size: 12px;
+$ft-font__body__3__line-height: 18px;
+$ft-shadow__card: 0 -1px 1px 0 rgba(0, 0, 0, 0.04), 0 1px 2px 0 rgba(0, 0, 0, 0.16);
+$ft-space__1: 4px;
+$ft-space__2: 8px;
+$ft-space__3: 16px;
+$ft-space__4: 24px;
+$ft-space__5: 32px;
+$ft-space__6: 64px;
+$ft-space__7: 128px;
+$ft-space__8: 256px;
+$ft-wrap__max-width: 946px;
+$ft-wrap__no-pad-width: 1010px;
+$ft-z-index__modal: 200;
+
+
+
+
+// Volt Settings
+
+$ft-font-family: 'Inter',  -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;

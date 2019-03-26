@@ -1,0 +1,39 @@
+// Breakpoints
+// Use with:
+//
+// @include ft-respond-above($ft-breakpoint__medium) {
+// ...css here...
+// }
+//
+// @include ft-respond-above(300px) {
+// ...css here...
+// }
+$ft-spacer-unit: 4px;
+
+@function ft-spacer($value) {
+    @if ($value * 2) % 1 != 0 {
+        @warn 'Spacer value must be a multiple of 0.5';
+        @return 'Spacer value must be a multiple of 0.5';
+    } @else {
+        @return $ft-spacer-unit * $value;
+    }
+}
+
+
+@mixin ft-respond-between($min-width, $max-width) {
+	@media (min-width: $min-width + 1) and (max-width: $max-width) {
+			@content;
+	}
+}
+
+@mixin ft-respond-above($width) {
+	@media (min-width: $width + 1) {
+			@content;
+	}
+}
+
+@mixin ft-respond-below($width) {
+	@media (max-width: $width) {
+			@content;
+	}
+}

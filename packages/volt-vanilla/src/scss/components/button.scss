@@ -1,0 +1,73 @@
+.ft-button {
+	@include ft-button;
+}
+
+.ft-button--secondary {
+	@include ft-button--secondary;
+}
+
+.ft-button--tertiary {
+	@include ft-button--tertiary;
+}
+
+
+.ft-button--txt {
+	@include ft-button--txt;
+}
+
+
+.ft-button--danger {
+	@include ft-button--danger;
+}
+
+.ft-button--danger__full {
+	@include ft-button--danger__full;
+}
+
+
+.ft-button--link {
+	@include ft-button--link;
+}
+
+.ft-button--block {
+	@include ft-button--block;
+}
+
+
+
+.ft-button--sm {
+	@include ft-button--sm;
+}
+
+.ft-button--lg {
+	@include ft-button--lg;
+}
+.ft-button--disabled,
+.ft-button[disabled] {
+	@include ft-button--disabled;
+}
+
+
+// Buttons with icons
+
+.ft-button-icon {
+	@include ft-button-icon;
+}
+
+.ft-button-icon__icon {
+	@include ft-button-icon__icon;
+}
+
+.ft-button--full-below-sm {
+	@include ft-button--block;
+	@include ft-respond-above($ft-breakpoint__small) {
+		width: auto;
+	}
+}
+
+.ft-button--full-below-lg {
+	@include ft-button--block;
+	@include ft-respond-above($ft-breakpoint__large) {
+		width: auto;
+	}
+}

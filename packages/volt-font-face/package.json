@@ -4,7 +4,7 @@
     "main": "_index.scss",
     "repository": {
         "type": "git",
-        "url": "git+https://github.com/fasttrack360/volt-font-face.git"
+        "url": "git+https://github.com/fasttrack360/volt.git"
     },
     "publishConfig": {
         "registry": "https://registry.npmjs.org/",
@@ -12,14 +12,14 @@
     },
     "author": {
         "name": "Karthik",
-        "email": "krajendran@fasttrack.com.au",
+        "email": "karthik97live@gmail.com",
         "url": "http://k97.co/"
     },
     "license": "Apache-2.0",
     "bugs": {
-        "url": "https://github.com/fasttrack360/volt-font-face/issues"
+        "url": "https://github.com/fasttrack360/volt/issues"
     },
-    "homepage": "https://github.com/fasttrack360/volt-font-face",
+    "homepage": "https://github.com/fasttrack360/volt",
     "devDependencies": {
         "node-sass-tilde-importer": "1.0.0",
         "tmp": "^0.0.33"
