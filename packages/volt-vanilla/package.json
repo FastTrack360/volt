@@ -3,13 +3,7 @@
     "description": "CSS and Sass mixins for building Volt Design System",
     "version": "0.0.1",
     "author": "Karthik Rajendran <karthik97live@gmail.com>",
-    "main": "volt.scss",
-    "style": "volt.scss",
-    "files": [
-        "*.css",
-        "volt.scss",
-        "mixins"
-    ],
+    "main": "src/scss/volt.scss",
     "repository": {
         "type": "git",
         "url": "git+https://github.com/fasttrack360/volt.git"
