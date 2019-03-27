@@ -1,0 +1,17 @@
+{
+  "name": "ng-volt",
+  "version": "0.0.1",
+  "repository": "https://github.com/fasttrack360/volt.git",
+  "author": "Karthik <karthik97live@gmail.com>",
+  "peerDependencies": {
+    "@angular/core": "8.0.0-beta.4",
+    "@angular/common": "8.0.0-beta.4"
+  },
+  "ngPackage": {
+    "$schema": "./node_modules/ng-packagr/ng-package.schema.json",
+    "lib": {
+      "entryFile": "src/public_api.ts"
+    },
+    "dest": "../build/ng-volt"
+  }
+}
