@@ -10,30 +10,21 @@
 	@include ft-button--tertiary;
 }
 
-
 .ft-button--txt {
 	@include ft-button--txt;
 }
-
 
 .ft-button--danger {
 	@include ft-button--danger;
 }
 
-.ft-button--danger__full {
-	@include ft-button--danger__full;
+.ft-button--danger-inverse {
+	@include ft-button--danger-inverse;
 }
-
 
 .ft-button--link {
 	@include ft-button--link;
 }
-
-.ft-button--block {
-	@include ft-button--block;
-}
-
-
 
 .ft-button--sm {
 	@include ft-button--sm;
@@ -42,11 +33,25 @@
 .ft-button--lg {
 	@include ft-button--lg;
 }
+
 .ft-button--disabled,
+.ft-button--txt[disabled],
+.ft-button--link[disabled],
+.ft-button--danger__inverse[disabled],
+.ft-button--danger[disabled],
+.ft-button--tertiary[disabled],
+.ft-button--secondary[disabled] ,
 .ft-button[disabled] {
 	@include ft-button--disabled;
 }
 
+
+[class^="ft-button"] + [class^="ft-button"] {
+	margin: 0 0 0 ft-spacer(1.5);
+}
+
+[class*="button--block"] + [class*="button--block"] {
+  margin: ft-spacer(1.5) 0 0; }
 
 // Buttons with icons
 

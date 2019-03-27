@@ -1,4 +1,11 @@
+
 // Button mixins
+
+@mixin ft-button--block($important: null) {
+	width: 100% $important;
+	text-align: center $important;
+	padding: ft-spacer(1.5) ft-spacer(4) $important;
+}
 
 @mixin ft-button($important: null) {
 
@@ -17,7 +24,7 @@
 	border-width: 1px $important;
 	border-style: solid $important;
 
-	font-size: 1.0rem $important;
+	font-size: 0.90rem $important;
 	font-weight: 500 $important;
 	font-family: $ft-font-family $important;
 	user-select: none $important;
@@ -29,14 +36,13 @@
 
 	overflow: visible $important;
 	min-height: 30px $important;
+	transition: background 0.4s cubic-bezier(.645, .045, .355, 1), box-shadow 380ms cubic-bezier(.4,0,.2,1);
+
 
 	// Unique styles for the base, button start here.
 	background-color: $ft-color__blue $important;
-
 	border-color: transparent $important;
 	color: $ft-color__white $important;
-
-	transition: background 0.4s cubic-bezier(.645, .045, .355, 1), box-shadow 380ms cubic-bezier(.4,0,.2,1);
 
 	&:hover {
 		color: $ft-color__white $important;
@@ -48,12 +54,16 @@
 	&:focus {
 		outline: none;
 		box-shadow: 0 0 0 .1em #fff, 0 0 0 .2em lighten($color: $ft-color__blue-600, $amount: 40);
-
-
 	}
+
+	&.ft-button--block {
+		@include ft-button--block();
+	}
+
 }
 
 @mixin ft-button--secondary($important: null) {
+	@include ft-button();
 	background-color: $ft-color__blue-100 $important;
 	border-color: darken($color: $ft-color__blue-100, $amount: 12) $important;
 	color: $ft-color__blue-500 $important;
@@ -69,6 +79,7 @@
 }
 
 @mixin ft-button--tertiary($important: null) {
+	@include ft-button();
 	background-color: $ft-color__white $important;
 	border-color: $ft-color__blue $important;
 	color: $ft-color__blue $important;
@@ -83,6 +94,7 @@
 }
 
 @mixin ft-button--danger($important: null) {
+	@include ft-button();
 	background-color: $ft-color__white $important;
 	border-color: $ft-color__red $important;
 	color: $ft-color__red $important;
@@ -96,7 +108,8 @@
 
 }
 
-@mixin ft-button--danger__full($important: null) {
+@mixin ft-button--danger-inverse($important: null) {
+	@include ft-button();
 	background-color: $ft-color__red $important;
 	border-color: $ft-color__red $important;
 	color: $ft-color__white $important;
@@ -111,6 +124,7 @@
 }
 
 @mixin ft-button--link($important: null) {
+	@include ft-button();
 	color: $ft-color__blue $important;
 	background: none $important;
 	border-color: transparent $important;
@@ -126,6 +140,7 @@
 }
 
 @mixin ft-button--txt($important: null) {
+	@include ft-button();
 	color: $ft-color__black-300 $important;
 	background: none $important;
 	border-color: $ft-color__gray $important;
@@ -141,22 +156,16 @@
 }
 
 @mixin ft-button--sm($important: null) {
-	font-size: 0.90rem $important;
 	line-height: 16px $important;
 	padding: ft-spacer(1.0) ft-spacer(3.0) $important;
 	min-height: 20px $important;
 }
 
 @mixin ft-button--lg($important: null) {
-	font-size: 1.025rem $important;
+	font-size: 1.0rem $important;
 	line-height: 32px $important;
 	padding: ft-spacer(1.0) ft-spacer(4.0) $important;
 	min-height: 30px $important;
-}
-
-@mixin ft-button--block($important: null) {
-	width: 100% $important;
-	text-align: center $important;
 }
 
 // Disabled

@@ -1,0 +1,9 @@
+body {
+	text-rendering: optimizeLegibility;
+	-moz-osx-font-smoothing: grayscale;
+	-webkit-font-smoothing: antialiased;
+}
+
+code, samp {
+	font-family: $ft-font-family-code;
+}
