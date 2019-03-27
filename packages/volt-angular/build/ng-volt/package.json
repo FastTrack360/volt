@@ -1,0 +1,23 @@
+{
+  "name": "@fasttrack360/ng-volt",
+  "version": "0.0.1",
+  "repository": "https://github.com/fasttrack360/volt.git",
+  "author": "Karthik <karthik97live@gmail.com>",
+  "peerDependencies": {
+    "@angular/core": "8.0.0-beta.4",
+    "@angular/common": "8.0.0-beta.4"
+  },
+  "main": "bundles/ng-volt.umd.js",
+  "module": "fesm5/ng-volt.js",
+  "es2015": "fesm2015/ng-volt.js",
+  "esm5": "esm5/ng-volt.js",
+  "esm2015": "esm2015/ng-volt.js",
+  "fesm5": "fesm5/ng-volt.js",
+  "fesm2015": "fesm2015/ng-volt.js",
+  "typings": "ng-volt.d.ts",
+  "metadata": "ng-volt.metadata.json",
+  "sideEffects": false,
+  "dependencies": {
+    "tslib": "^1.9.0"
+  }
+}
