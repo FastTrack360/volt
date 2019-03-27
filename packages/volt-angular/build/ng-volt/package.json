@@ -1,5 +1,6 @@
 {
-  "name": "@fasttrack360/ng-volt",
+	"name": "@fasttrack360/ng-volt",
+	"private": false,
   "version": "0.0.1",
   "repository": "https://github.com/fasttrack360/volt.git",
   "author": "Karthik <karthik97live@gmail.com>",
@@ -16,7 +17,6 @@
   "fesm2015": "fesm2015/ng-volt.js",
   "typings": "ng-volt.d.ts",
   "metadata": "ng-volt.metadata.json",
-  "sideEffects": false,
   "dependencies": {
     "tslib": "^1.9.0"
   }
