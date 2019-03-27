@@ -1,25 +1,23 @@
-Buttons can be used with `<a>`, `<button>` elements.  
+Buttons can be used with `<a>`, `<button>` elements.
 
 #### Types
-- `primary` -  Provides extra visual weight and identifies the primary action in a set of buttons 
-- `secondary` -  Identifies the secondary action in a set of buttons 
-- `tertiary` -  Identifies the tertiary or low level action in a set of buttons 
-- `success` -  Indicates a successful or positive action
+- `primary` -  Provides extra visual weight and identifies the primary action in a set of buttons
+- `secondary` -  Identifies the secondary action in a set of buttons
+- `tertiary` -  Identifies the tertiary or low level action in a set of buttons
 - `danger` -  Indicates a warning or negative action
+- `dangerInverse` -  Indicates a warning or negative action with an inverse style
+- `text` -  Button style with a text only being displayed
+- `link` -  Button styled to work as a link
 
-#### Additional Config
+#### Size
 - `small` - Small buttons
 - `large` - Large buttons
+- `block` - Block buttons
 
 
 #### Reference:
 ```type.js
-	@HostBinding("class.bx--btn--primary") primary = true;
-	@HostBinding("class.bx--btn--secondary") secondary = false;
-	@HostBinding("class.bx--btn--tertiary") tertiary = false;
-	@HostBinding("class.bx--btn--danger") danger = false;
-	@HostBinding("class.bx--skeleton") @Input() linkBtn = false;
-	@HostBinding("class.bx--btn--sm") smallSize = false;
+<button ftButton="primary" ftSize="small">Hello World</button>
 ```
 
 

@@ -4,7 +4,7 @@ Roadmap of sorts
 
 |								| Native											| Angular					| Web Components	| Docs	|
 | ------------- |:-------------:|:-------------:|:-------------:|:-------------:|
-| Button        |<i class="c--progress"></i>|	<i class="c--progress"></i>|	<i class="c--progress"></i>|	<i class="c--done"></i>|
+| Button        |<i class="c--done"></i>|	<i class="c--done"></i>|	<i class="c--progress"></i>|	<i class="c--done"></i>|
 | Accordion			|<i class="c--progress"></i>|	<i class="c--progress"></i>|	<i class="c--progress"></i>|	<i class="c--progress"></i>|
 
 
