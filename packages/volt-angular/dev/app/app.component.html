@@ -1,0 +1,15 @@
+<h1>Volt Angular Showcase</h1>
+
+
+<main class="" style="width: 80%; padding:0 2.0rem 0 1.0rem;">
+	<router-outlet></router-outlet>
+</main>
+<aside style="position: fixed; right: 0; top: 0; height: 100%; width:20%; padding: 1.0rem;  background: #f3f4f6;">
+	<h3>Menu</h3>
+	<ul>
+		<li><a [routerLink]="['/']" routerLinkActive="router-link-active">Home</a></li>
+		<li *ngFor="let route of routes">
+			<a [routerLink]="[route.path]" routerLinkActive="router-link-active">{{route.path | titlecase}}</a>
+		</li>
+	</ul>
+</aside>
