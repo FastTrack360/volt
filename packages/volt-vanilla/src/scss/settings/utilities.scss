@@ -4,14 +4,19 @@
 // Text
 //
 
-.txt-monospace { font-family: $font-family-monospace !important; }
+
+.txt-monospace { font-family: $ft-font-family-code !important; }
 
 // Alignment
 
 .txt-justify  { text-align: justify !important; }
 .txt-wrap     { white-space: normal !important; }
 .txt-nowrap   { white-space: nowrap !important; }
-.txt-truncate { @include text-truncate; }
+.txt-truncate {
+	overflow: hidden;
+  text-overflow: ellipsis;
+	white-space: nowrap;
+}
 
 // Responsive alignment
 
@@ -36,26 +41,13 @@
 .fw-100   { font-weight: 100 !important; }
 .fw-200   { font-weight: 200 !important; }
 .fw-300   { font-weight: 300 !important; }
+.fw-400   { font-weight: 400 !important; }
 .fw-500   { font-weight: 500 !important; }
 .fw-600   { font-weight: 600 !important; }
 .fw-700   { font-weight: 700 !important; }
 .fw-800   { font-weight: 800 !important; }
 .fw-900   { font-weight: 900 !important; }
 
-
-// Contextual colors
-
-.txt-white { color: $white !important; }
-
-// @each $color, $value in $theme-colors {
-//   @include text-emphasis-variant(".text-#{$color}", $value);
-// }
-
-.txt-body { color: $body-color !important; }
-.txt-muted { color: $text-muted !important; }
-
-.txt-black-50 { color: rgba($black, .5) !important; }
-.txt-white-50 { color: rgba($white, .5) !important; }
 
 // Misc
 

@@ -1,28 +1,14 @@
 import { NgModule, ModuleWithProviders } from '@angular/core';
-import { CommonModule } from '@angular/common';
-import { VoltButtonDirective } from './button/button.directive';
+
+import { VoltButtonModule } from './button/button.module';
+import { VoltAccordionModule } from './accordion/accordion.module';
 
 @NgModule({
-	imports: [
-		CommonModule
-	],
-	declarations: [
-		VoltButtonDirective
-	],
 	exports: [
-		VoltButtonDirective
+		VoltButtonModule,
+		VoltAccordionModule
 	]
 })
 
 export class VoltModule {
-
-	public static forRoot(): ModuleWithProviders {
-
-		return {
-			ngModule: VoltModule,
-			providers: [
-
-			]
-		};
-	}
 }

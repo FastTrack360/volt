@@ -1,0 +1,33 @@
+
+<button
+	type="button"
+	(click)="toggleExpanded()"
+	class="ft--accordion__heading">
+
+	<svg
+		class="ft--accordion__arrow"
+		width="7"
+		height="12"
+		viewBox="0 0 7 12">
+					<path fill-rule="nonzero" d="M5.569 5.994L0 .726.687 0l6.336 5.994-6.335 6.002L0 11.27z"/>
+	</svg>
+
+	<strong
+		[ngClass]="[
+			'ft--accordion__title',
+			customHeaderClass
+		]">
+
+		{{!skeleton ? title : null}}
+	</strong>
+
+</button>
+
+<div [id]="id" class="ft--accordion__content">
+	<ng-content *ngIf="!skeleton; else skeletonTemplate"></ng-content>
+	<ng-template #skeletonTemplate>
+		<p class="ft--skeleton__text" style="width: 90%"></p>
+		<p class="ft--skeleton__text" style="width: 80%"></p>
+		<p class="ft--skeleton__text" style="width: 95%"></p>
+	</ng-template>
+</div>

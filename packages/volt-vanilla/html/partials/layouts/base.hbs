@@ -1,0 +1,29 @@
+<!doctype html>
+<html>
+  <head>
+    <title>
+      {{#if title}}
+        {{title}}
+      {{else}}
+        Volt Vanilla
+      {{/if}}
+    </title>
+    <link rel="stylesheet" href="../../../public/volt.css" />
+    {{#> head-block}}
+      {{!-- Custom <head> content per page could be added. --}}
+    {{/head-block}}
+  </head>
+  <body>
+    <header>
+      {{#> footer-block}}
+        {{> includes/footer }}
+      {{/footer-block}}
+    </header>
+
+
+
+    {{#> scripts-block}}
+      {{!-- Custom scripts per page can be added. --}}
+    {{/scripts-block}}
+  </body>
+</html>

@@ -3,7 +3,7 @@
   "version": "0.0.1",
   "repository": "https://github.com/fasttrack360/volt.git",
   "author": "Karthik <karthik97live@gmail.com>",
-  "peerDependencies": {
+	"peerDependencies": {
     "@angular/core": "8.0.0-beta.4",
     "@angular/common": "8.0.0-beta.4"
   },

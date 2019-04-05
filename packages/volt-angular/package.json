@@ -4,7 +4,7 @@
   "license": "Apache-2.0",
   "scripts": {
     "ng": "ng",
-    "start": "ng serve",
+    "start": "ng serve --port=6161",
     "build": "ng build",
     "build:app": "cpr build/volt dev/volt/lib -d && ng build packages && rimraf dev/volt",
     "build:lib": "rimraf build && ng-packagr -p volt/package.json",

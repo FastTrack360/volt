@@ -22,7 +22,10 @@
         "clear": "rm -rf css",
         "build-css": "rm -rf public && node-sass --include-path src/scss src/scss/volt.scss public/volt.css && postcss public/volt.css > public/volt.min.css && postcss public/volt.min.css --map --use autoprefixer css-mqpacker cssnano --replace",
         "watch-css": "rm -rf public && node-sass --watch src/scss/volt.scss -o public/ && postcss public/volt.css > public/volt.min.css && postcss public/volt.min.css --map --use autoprefixer css-mqpacker cssnano --replace",
-        "watch-demo": "live-server"
+        "watch-demo": "live-server",
+        "prestart": "npm install",
+        "start-dev": "gulp --dev",
+        "build-dev": "gulp"
     },
     "dependencies": {
         "@fasttrack360/volt-font-face": "0.0.1"
@@ -39,6 +42,12 @@
         "nodemon": "^1.18.10",
         "p-map": "^2.0.0",
         "parallelshell": "^3.0.2",
-        "postcss-cli": "^6.1.1"
+        "postcss-cli": "^6.1.1",
+        "browser-sync": "^2.14.0",
+        "del": "^2.2.1",
+        "gulp": "^3.9.1",
+        "gulp-compile-handlebars": "^0.6.1",
+        "gulp-rename": "^1.2.2",
+        "gulp-util": "^3.0.7"
     }
 }

@@ -1,2 +1,5 @@
-export * from './button/button.directive';
+export * from './button/index';
+export * from './accordion/index';
+
+// Volt Module
 export * from './volt.module';

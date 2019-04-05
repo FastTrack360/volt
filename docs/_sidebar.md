@@ -8,3 +8,4 @@
 
 - [Components](components/home.md)
   - [Button](components/button.md)
+  - [Accordion](components/accordion.md)

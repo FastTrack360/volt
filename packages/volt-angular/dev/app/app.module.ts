@@ -7,20 +7,22 @@ import { FormsModule } from '@angular/forms';
 import { VoltModule } from '@fasttrack360/ng-volt';
 import { ROUTING } from './app.routes';
 import { DemoButtonComponent } from './demo-button.component/demo-button.component';
+import { DemoAccordionComponent } from './demo-accordion.component/demo-accordion.component';
 
 
 @NgModule({
 	declarations: [
 		AppComponent,
 
-
-		DemoButtonComponent
+		// Demo Components
+		DemoButtonComponent,
+		DemoAccordionComponent
 	],
 	imports: [
 		BrowserModule,
 		FormsModule,
 		ROUTING,
-		VoltModule.forRoot()
+		VoltModule
 	],
 	providers: [],
 	bootstrap: [AppComponent]
