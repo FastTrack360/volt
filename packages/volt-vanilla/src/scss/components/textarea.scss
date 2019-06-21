@@ -1,0 +1,95 @@
+//
+// Copyright IBM Corp. 2016, 2018
+//
+// This source code is licensed under the Apache-2.0 license found in the
+// LICENSE file in the root directory of this source tree.
+//
+
+//-----------------------------
+// Text area
+//-----------------------------
+
+
+.ft--text-area {
+	@include reset;
+	// @include type-style('body-long-01');
+	@include focus-outline('reset');
+
+	background-color: $ui-02;
+	width: 100%;
+	min-width: 10rem;
+	min-height: rem(40px);
+	padding: rem(11px) $carbon--spacing-05;
+	color: $text-01;
+	order: 3;
+	resize: vertical;
+	border: 1px solid $ui-04;
+	transition: background-color $duration--fast-01 motion(standard, productive),
+		outline $duration--fast-01 motion(standard, productive);
+	border-radius: 0.25rem;
+
+	& ~ .ft--form__helper-text {
+		margin-top: 0;
+		order: 2;
+		font-style: italic;
+	}
+
+	& ~ .ft--form-requirement {
+		order: 4;
+		color: $color-danger;
+		font-weight: 400;
+		margin-top: $carbon--spacing-02;
+
+		&::before {
+			display: none;
+		}
+	}
+}
+
+
+.ft--text-area:focus,
+.ft--text-area:active {
+
+	outline: 2px solid $brand-01;
+	outline-offset: -2px;
+}
+
+.ft--text-area::placeholder {
+	@include placeholder-colors;
+	// @include type-style('body-long-01');
+	opacity: 1;
+}
+
+.ft--text-area--light {
+	background-color: $field-02;
+}
+
+.ft--text-area--invalid {
+	padding-right: $carbon--spacing-08;
+}
+
+.ft--text-area__wrapper {
+	position: relative;
+	display: flex;
+}
+
+.ft--text-area__invalid-icon {
+	position: absolute;
+	right: $carbon--spacing-05;
+	top: $carbon--spacing-04;
+	fill: $color-danger;
+}
+
+//-----------------------------
+// Disabled
+//-----------------------------
+.ft--text-area:disabled {
+	cursor: not-allowed;
+	outline: none;
+	background-color: $disabled-01;
+	border-bottom: 1px solid transparent;
+}
+
+.ft--text-area:disabled::placeholder {
+	color: $disabled-02;
+}

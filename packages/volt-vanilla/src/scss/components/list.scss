@@ -1,0 +1,105 @@
+
+//-----------------------------
+// List
+//-----------------------------
+
+.ft--list--nested,
+.ft--list--unordered,
+.ft--list--ordered {
+@include reset;
+	// @include type-style('body-short-01');
+	counter-reset: listitem;
+}
+
+.ft--list__item {
+	font-weight: 400;
+	color: $text-01;
+	list-style-type: none;
+	counter-increment: listitem;
+}
+
+.ft--list--nested {
+	margin-bottom: rem(4px);
+	margin-left: $carbon--spacing-07;
+}
+
+.ft--list--unordered > .ft--list__item:before,
+.ft--list--ordered > .ft--list__item:before {
+	display: inline-block;
+	margin-right: $carbon--spacing-03;
+	margin-bottom: rem(4px);
+}
+
+.ft--list--unordered .ft--list--nested > .ft--list__item:before,
+.ft--list--ordered .ft--list--nested > .ft--list__item:before {
+margin-right: $carbon--spacing-03;
+	display: inline-block;
+}
+
+.ft--list--unordered > .ft--list__item:before {
+	content: '\002013';
+}
+
+.ft--list--unordered .ft--list--nested > .ft--list__item:before {
+	content: '\0025AA';
+}
+
+.ft--list--ordered > .ft--list__item:before {
+	content: counter(listitem) '.';
+}
+
+.ft--list--ordered .ft--list--nested > .ft--list__item {
+	counter-increment: sub-list-item;
+}
+
+.ft--list--ordered .ft--list--nested > .ft--list__item:before {
+	content: counter(sub-list-item, lower-alpha) '.';
+	width: 0.6rem;
+}
+
+
+//-----------------------------
+// Link
+//-----------------------------
+
+.ft--link {
+	@include reset;
+	// @include type-style('body-long-01');
+	color: $link-01;
+	text-decoration: none;
+	outline: none;
+	transition: $duration--fast-01 motion(standard, productive);
+
+			&:hover {
+					color: $link-01;
+					box-shadow: 0 1px currentColor;
+			}
+
+			&:active,
+			&:active:visited {
+					color: $text-01;
+					box-shadow: 0 1px currentColor;
+			}
+
+			&:focus {
+					box-shadow: 0 3px currentColor;
+			}
+
+
+			&:visited {
+					color: $link-01;
+			}
+	}
+
+	.ft--link--visited {
+			color: $visited-link;
+	}
+
+	.ft--link--disabled {
+			@include reset;
+			// @include type-style('body-long-01');
+			display: inline;
+			color: $disabled-02;
+			font-weight: 400;
+			cursor: not-allowed;
+	}

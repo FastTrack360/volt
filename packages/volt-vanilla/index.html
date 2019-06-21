@@ -17,23 +17,457 @@
 	</style>
 </head>
 
-<body>
+<body style="margin: 2.0rem 50px;">
+
+
+		<h5>Dropdown</h5>
+
+	<div class="ft--form-item">
+		<div class="ft--dropdown__wrapper ">
+			<label for="dropdown-id" class="ft--label">Dropdown label</label>
+			<div class="ft--form__helper-text">Optional helper text.</div>
+			<ul data-dropdown data-value id="dropdown-id"
+				class="ft--dropdown"
+				tabindex="0">
+				<li class="ft--dropdown-text">Dropdown option</li>
+				<li class="ft--dropdown__arrow-container">
+					<svg focusable="false" preserveAspectRatio="xMidYMid meet" style="will-change: transform;" xmlns="http://www.w3.org/2000/svg" class="ft--dropdown__arrow" width="16" height="16" viewBox="0 0 16 16" aria-hidden="true"><path d="M8 11L3 6l.7-.7L8 9.6l4.3-4.3.7.7z"></path></svg>
+				</li>
+				<li>
+					<ul class="ft--dropdown-list">
+						<li data-option data-value="all" class="ft--dropdown-item">
+							<a class="ft--dropdown-link" href="javascript:void(0)" tabindex="-1">Option 1</a>
+						</li>
+						<li data-option data-value="cloudFoundry" class="ft--dropdown-item">
+							<a class="ft--dropdown-link" href="javascript:void(0)" tabindex="-1">Option 2</a>
+						</li>
+						<li data-option data-value="staging" class="ft--dropdown-item">
+							<a class="ft--dropdown-link" href="javascript:void(0)" tabindex="-1">Option 3</a>
+						</li>
+						<li data-option data-value="dea" class="ft--dropdown-item">
+							<a class="ft--dropdown-link" href="javascript:void(0)" tabindex="-1">Option 4</a>
+						</li>
+						<li data-option data-value="router" class="ft--dropdown-item">
+							<a class="ft--dropdown-link" href="javascript:void(0)" tabindex="-1">Option 5</a>
+						</li>
+						<li data-option data-value="loremipsum" class="ft--dropdown-item">
+							<a class="ft--dropdown-link" href="javascript:void(0)" tabindex="-1">An example option that is really long to show what should be done to handle long text</a>
+						</li>
+					</ul>
+				</li>
+			</ul>
+		</div>
+	</div>
+
+	<div class="ft--form-item">
+		<div class="ft--dropdown__wrapper ">
+			<label for="dropdown-id-longer-helper-text" class="ft--label">Dropdown label</label>
+			<div class="ft--form__helper-text">Optional helper text here; if message is more than one line text
+				should wrap (~100 character count maximum)</div>
+			<ul data-dropdown data-value id="dropdown-id-longer-helper-text"
+				class="ft--dropdown"
+				tabindex="0">
+				<li class="ft--dropdown-text">
+					 Dropdown option       </li>
+				<li class="ft--dropdown__arrow-container">
+					<svg focusable="false" preserveAspectRatio="xMidYMid meet" style="will-change: transform;" xmlns="http://www.w3.org/2000/svg" class="ft--dropdown__arrow" width="16" height="16" viewBox="0 0 16 16" aria-hidden="true"><path d="M8 11L3 6l.7-.7L8 9.6l4.3-4.3.7.7z"></path></svg>
+				</li>
+				<li>
+					<ul class="ft--dropdown-list">
+						<li data-option data-value="all" class="ft--dropdown-item">
+							<a class="ft--dropdown-link" href="javascript:void(0)" tabindex="-1">Option 1</a>
+						</li>
+						<li data-option data-value="cloudFoundry" class="ft--dropdown-item">
+							<a class="ft--dropdown-link" href="javascript:void(0)" tabindex="-1">Option 2</a>
+						</li>
+						<li data-option data-value="staging" class="ft--dropdown-item">
+							<a class="ft--dropdown-link" href="javascript:void(0)" tabindex="-1">Option 3</a>
+						</li>
+						<li data-option data-value="dea" class="ft--dropdown-item">
+							<a class="ft--dropdown-link" href="javascript:void(0)" tabindex="-1">Option 4</a>
+						</li>
+						<li data-option data-value="router" class="ft--dropdown-item">
+							<a class="ft--dropdown-link" href="javascript:void(0)" tabindex="-1">Option 5</a>
+						</li>
+						<li data-option data-value="loremipsum" class="ft--dropdown-item">
+							<a class="ft--dropdown-link" href="javascript:void(0)" tabindex="-1">An example option that is really long to show what should be done to handle long text</a>
+						</li>
+					</ul>
+				</li>
+			</ul>
+		</div>
+	</div>
+
+	<div class="ft--form-item">
+		<div class="ft--dropdown__wrapper ">
+			<label for="dropdown-id-disabled" class="ft--label ft--label--disabled">Dropdown
+				label</label>
+			<div class="ft--form__helper-text ft--form__helper-text--disabled">Optional helper text
+				here; if message is more than one line text
+				should wrap (~100 character count maximum)</div>
+			<ul data-dropdown data-value id="dropdown-id-disabled"
+				class="ft--dropdown ft--dropdown--disabled"
+				tabindex="0">
+				<li class="ft--dropdown-text">
+					 Dropdown option       </li>
+				<li class="ft--dropdown__arrow-container">
+					<svg focusable="false" preserveAspectRatio="xMidYMid meet" style="will-change: transform;" xmlns="http://www.w3.org/2000/svg" class="ft--dropdown__arrow" width="16" height="16" viewBox="0 0 16 16" aria-hidden="true"><path d="M8 11L3 6l.7-.7L8 9.6l4.3-4.3.7.7z"></path></svg>
+				</li>
+				<li>
+					<ul class="ft--dropdown-list">
+						<li data-option data-value="all" class="ft--dropdown-item">
+							<a class="ft--dropdown-link" href="javascript:void(0)" tabindex="-1">Option 1</a>
+						</li>
+						<li data-option data-value="cloudFoundry" class="ft--dropdown-item">
+							<a class="ft--dropdown-link" href="javascript:void(0)" tabindex="-1">Option 2</a>
+						</li>
+						<li data-option data-value="staging" class="ft--dropdown-item">
+							<a class="ft--dropdown-link" href="javascript:void(0)" tabindex="-1">Option 3</a>
+						</li>
+						<li data-option data-value="dea" class="ft--dropdown-item">
+							<a class="ft--dropdown-link" href="javascript:void(0)" tabindex="-1">Option 4</a>
+						</li>
+						<li data-option data-value="router" class="ft--dropdown-item">
+							<a class="ft--dropdown-link" href="javascript:void(0)" tabindex="-1">Option 5</a>
+						</li>
+						<li data-option data-value="loremipsum" class="ft--dropdown-item">
+							<a class="ft--dropdown-link" href="javascript:void(0)" tabindex="-1">An example option that is really long to show what should be done to handle long text</a>
+						</li>
+					</ul>
+				</li>
+			</ul>
+		</div>
+	</div>
+
+	<div class="ft--form-item">
+		<div
+			class="ft--dropdown__wrapper ">
+			<label for="dropdown-id-invalid" class="ft--label">Dropdown
+				label</label>
+			<div class="ft--form__helper-text">Optional helper text
+				here; if message is more than one line text
+				should wrap (~100 character count maximum)</div>
+			<ul data-dropdown data-value id="dropdown-id-invalid"
+				class="ft--dropdown ft--dropdown--invalid"
+				tabindex="0" data-invalid>
+				<svg focusable="false" preserveAspectRatio="xMidYMid meet" style="will-change: transform;" xmlns="http://www.w3.org/2000/svg" class="ft--dropdown__invalid-icon" width="16" height="16" viewBox="0 0 16 16" aria-hidden="true"><path d="M8 1C4.2 1 1 4.2 1 8s3.2 7 7 7 7-3.1 7-7-3.1-7-7-7zm-.5 3h1v5h-1V4zm.5 8.2c-.4 0-.8-.4-.8-.8s.3-.8.8-.8c.4 0 .8.4.8.8s-.4.8-.8.8z"></path><path d="M7.5 4h1v5h-1V4zm.5 8.2c-.4 0-.8-.4-.8-.8s.3-.8.8-.8c.4 0 .8.4.8.8s-.4.8-.8.8z" data-icon-path="inner-path" opacity="0"></path></svg>
+				<li class="ft--dropdown-text">
+					 Dropdown option       </li>
+				<li class="ft--dropdown__arrow-container">
+					<svg focusable="false" preserveAspectRatio="xMidYMid meet" style="will-change: transform;" xmlns="http://www.w3.org/2000/svg" class="ft--dropdown__arrow" width="16" height="16" viewBox="0 0 16 16" aria-hidden="true"><path d="M8 11L3 6l.7-.7L8 9.6l4.3-4.3.7.7z"></path></svg>
+				</li>
+				<li>
+					<ul class="ft--dropdown-list">
+						<li data-option data-value="all" class="ft--dropdown-item">
+							<a class="ft--dropdown-link" href="javascript:void(0)" tabindex="-1">Option 1</a>
+						</li>
+						<li data-option data-value="cloudFoundry" class="ft--dropdown-item">
+							<a class="ft--dropdown-link" href="javascript:void(0)" tabindex="-1">Option 2</a>
+						</li>
+						<li data-option data-value="staging" class="ft--dropdown-item">
+							<a class="ft--dropdown-link" href="javascript:void(0)" tabindex="-1">Option 3</a>
+						</li>
+						<li data-option data-value="dea" class="ft--dropdown-item">
+							<a class="ft--dropdown-link" href="javascript:void(0)" tabindex="-1">Option 4</a>
+						</li>
+						<li data-option data-value="router" class="ft--dropdown-item">
+							<a class="ft--dropdown-link" href="javascript:void(0)" tabindex="-1">Option 5</a>
+						</li>
+						<li data-option data-value="loremipsum" class="ft--dropdown-item">
+							<a class="ft--dropdown-link" href="javascript:void(0)" tabindex="-1">An example option that is really long to show what should be done to handle long text</a>
+						</li>
+					</ul>
+				</li>
+			</ul>
+		</div>
+		<div class="ft--form-requirement">
+			This is not a validation message
+		</div>
+	</div>
+
+
+
+<h5>Breadcrumb</h5>
+<nav class="ft--breadcrumb ft--breadcrumb--no-trailing-slash" aria-label="breadcrumb">
+    <div class="ft--breadcrumb-item">
+        <a href="#" class="ft--link">Breadcrumb 1</a>
+    </div>
+    <div class="ft--breadcrumb-item">
+        <a href="#" class="ft--link">Breadcrumb 2</a>
+    </div>
+    <div class="ft--breadcrumb-item">
+        <a href="#" class="ft--link">Breadcrumb 3</a>
+    </div>
+</nav>
+
+
+<h5>Link</h5>
+<a class="ft--link" aria-disabled="true">Placeholder link</a>
+<p class="ft--link--disabled">Disabled Link</p>
+<a  class="ft--link">Text wrap example for hover, focus, and active state testing.</a>
+
+
+	<h5>List</h5>
+	<ol class="ft--list--ordered">
+		<li class="ft--list__item">Ordered List level 1
+			<ol class="ft--list--nested">
+				<li class="ft--list__item">Ordered List level 2</li>
+				<li class="ft--list__item">Ordered List level 2</li>
+			</ol>
+		</li>
+		<li class="ft--list__item">Ordered List level 1</li>
+		<li class="ft--list__item">Ordered List level 1</li>
+	</ol>
+
+
+
+	<fieldset class="ft--fieldset">
+
+		<h5>Radio button label</h5>
+		<div class="ft--form-item">
+			<div class="ft--radio-button-group ">
+
+				<div class="ft--radio-button-wrapper">
+					<input id="radio-button-f4lnowych27-1" class="ft--radio-button" type="radio" value="red" name="radio-button"
+						tabindex="0" checked>
+					<label for="radio-button-f4lnowych27-1" class="ft--radio-button__label">
+						<span class="ft--radio-button__appearance"></span>
+						<span class="ft--radio-button__label-text">Radio button label</span>
+					</label>
+				</div>
+
+				<div class="ft--radio-button-wrapper">
+					<input id="radio-button-f4lnowych27-2" class="ft--radio-button" type="radio" value="green" name="radio-button"
+						tabindex="0">
+					<label for="radio-button-f4lnowych27-2" class="ft--radio-button__label">
+						<span class="ft--radio-button__appearance"></span>
+						<span class="ft--radio-button__label-text">Radio button label</span>
+					</label>
+				</div>
+
+			</div>
+		</div>
+
+		<div class="ft--form-item">
+
+			<div class="ft--radio-button-wrapper">
+				<input id="radio-button-f4lnowych27-3" class="ft--radio-button" type="radio" value="red" name="radio-button"
+					tabindex="0" checked>
+				<label for="radio-button-f4lnowych27-3" class="ft--radio-button__label">
+					<span class="ft--radio-button__appearance"></span>
+					<span class="ft--radio-button__label-text">Radio button label</span>
+				</label>
+			</div>
+
+		</div>
+	</fieldset>
+
+	<!--
+  Copyright IBM Corp. 2016, 2018
+
+  This source code is licensed under the Apache-2.0 license found in the
+  LICENSE file in the root directory of this source tree.
+-->
+
+	<fieldset class="ft--fieldset">
+		<h5>Checkbox (input + label)</h5>
+		<!-- input + label -->
+		<div class="ft--form-item ft--checkbox-wrapper">
+			<input id="ft--checkbox-new" class="ft--checkbox" type="checkbox" value="new" name="checkbox" checked>
+			<label for="ft--checkbox-new" class="ft--checkbox-label">Checkbox</label>
+		</div>
+		<!-- input + label indeterminate -->
+		<div class="ft--form-item ft--checkbox-wrapper">
+			<input id="ft--checkbox-ind" class="ft--checkbox" type="checkbox" value="new" name="checkbox"
+				aria-checked="mixed">
+			<label for="ft--checkbox-ind" class="ft--checkbox-label">Indeterminate checkbox</label>
+		</div>
+		<!-- input + label checked disabled -->
+		<div class="ft--form-item ft--checkbox-wrapper">
+			<input id="ft--checkbox-new--disabled" class="ft--checkbox" type="checkbox" value="new" name="checkbox" checked
+				disabled>
+			<label for="ft--checkbox-new--disabled" class="ft--checkbox-label">Checkbox</label>
+		</div>
+		<!-- input + label indeterminate disabled -->
+		<div class="ft--form-item ft--checkbox-wrapper">
+			<input id="ft--checkbox-ind--disabled" class="ft--checkbox" type="checkbox" value="new" name="checkbox"
+				aria-checked="mixed" disabled>
+			<label for="ft--checkbox-ind--disabled" class="ft--checkbox-label">Indeterminate
+				checkbox</label>
+		</div>
+		<!-- input + label disabled -->
+		<div class="ft--form-item ft--checkbox-wrapper">
+			<input id="ft--checkbox-disabled" class="ft--checkbox" type="checkbox" value="new" name="checkbox" disabled>
+			<label for="ft--checkbox-disabled" class="ft--checkbox-label">Disabled checkbox</label>
+		</div>
+	</fieldset>
+	<fieldset class="ft--fieldset">
+		<legend class="ft--label">Checkbox (input > label)</legend>
+		<!-- label > input -->
+		<div class="ft--form-item ft--checkbox-wrapper">
+			<label for="ft--checkbox-new2" class="ft--checkbox-label">
+				<input id="ft--checkbox-new2" class="ft--checkbox" type="checkbox" value="yellow" name="checkbox" checked>
+				Checkbox
+			</label>
+		</div>
+		<!-- label > input indeterminate -->
+		<div class="ft--form-item ft--checkbox-wrapper">
+			<label for="ft--checkbox-ind2" class="ft--checkbox-label" data-contained-checkbox-state="mixed">
+				<input id="ft--checkbox-ind2" class="ft--checkbox" type="checkbox" value="yellow" name="checkbox"
+					aria-checked="mixed">
+				Indeterminate checkbox
+			</label>
+		</div>
+		<!-- label > input checked disabled -->
+		<div class="ft--form-item ft--checkbox-wrapper">
+			<label for="ft--checkbox-new2--disabled" class="ft--checkbox-label">
+				<input id="ft--checkbox-new2--disabled" class="ft--checkbox" type="checkbox" value="yellow" name="checkbox"
+					checked disabled>
+				Checkbox
+			</label>
+		</div>
+		<!-- label > input indeterminate disabled -->
+		<div class="ft--form-item ft--checkbox-wrapper">
+			<label for="ft--checkbox-ind2--disabled" class="ft--checkbox-label" data-contained-checkbox-state="mixed">
+				<input id="ft--checkbox-ind2--disabled" class="ft--checkbox" type="checkbox" value="yellow" name="checkbox"
+					aria-checked="mixed" disabled>
+				Indeterminate checkbox
+			</label>
+		</div>
+		<!-- label > input unchecked disabled -->
+		<div class="ft--form-item ft--checkbox-wrapper">
+			<label for="ft--checkbox-disabled2" class="ft--checkbox-label">
+				<input id="ft--checkbox-disabled2" class="ft--checkbox" type="checkbox" value="yellow" name="checkbox" disabled>
+				Disabled checkbox
+			</label>
+		</div>
+	</fieldset>
+
+
+
+
+	<form>
+
+		<h5>Form</h5>
+		<div class="ft--form-item ">
+			<label for="text-input-3" class="ft--label">Number Input label</label>
+			<div class="ft--form__helper-text">
+				Optional helper text here; if message is more than one line text should wrap (~100 character count maximum)
+			</div>
+			<input id="text-input-3" type="number" class="ft--text-input">
+		</div>
+
+		<!-- <div class="ft--form-item">
+			<div class="ft--number">
+				<label for="number-input0" class="ft--label">Number input label</label>
+				<div class="ft--number__input-wrapper">
+					<input id="number-input0" type="number" min="0" max="100" value="1">
+
+				</div>
+			</div>
+		</div> -->
+
+		<div class="ft--form-item ">
+			<label for="text-input-3" class="ft--label">Text Input label</label>
+			<div class="ft--form__helper-text">
+				Optional helper text here; if message is more than one line text should wrap (~100 character count maximum)
+			</div>
+			<input id="text-input-3" type="text" class="ft--text-input" placeholder="Optional placeholder text">
+		</div>
+
+		<div class="ft--form-item">
+			<label for="text-area-2" class="ft--label">Text Area label</label>
+			<div class="ft--form__helper-text">
+				Optional helper text here; if message is more than one line text should wrap (~100 character count maximum)
+			</div>
+			<textarea id="text-area-2" class="ft--text-area" rows="4" cols="50" placeholder="Placeholder text."></textarea>
+		</div>
+
+		<div class="ft--form-item">
+			<div class="ft--select ">
+				<label for="select-id" class="ft--label">Select label</label>
+				<div class="ft--select-input__wrapper">
+					<select id="select-id" class="ft--select-input ">
+						<option class="ft--select-option" value="" disabled selected hidden>Choose an option</option>
+						<option class="ft--select-option" value="solong">A much longer option that is worth having around to check
+							how text flows </option>
+						<optgroup class="ft--select-optgroup" label="Category 1">
+							<option class="ft--select-option" value="option1">Option 1 </option>
+							<option class="ft--select-option" value="option2">Option 2 </option>
+						</optgroup>
+						<optgroup class="ft--select-optgroup" label="Category 2">
+							<option class="ft--select-option" value="option1">Option 1 </option>
+							<option class="ft--select-option" value="option2">Option 2 </option>
+						</optgroup>
+					</select>
+					<svg focusable="false" preserveAspectRatio="xMidYMid meet" style="will-change: transform;"
+						xmlns="http://www.w3.org/2000/svg" class="ft--select__arrow" width="10" height="6" viewBox="0 0 10 6"
+						aria-hidden="true">
+						<path d="M5 6L0 1 .7.3 5 4.6 9.3.3l.7.7z"></path>
+					</svg>
+				</div>
+			</div>
+		</div>
+		<div class="ft--form-item">
+			<button class="ft-button" type="button">Submit</button>
+		</div>
+	</form>
+
+	<h4>Primary</h4>
+	<button class="ft-button">Primary</button>
+	<button class="ft-button  ft-button--sm">Primary Small</button>
+	<button class="ft-button ft-button--lg">Primary Large</button>
+	<button class="ft-button" disabled>Primary</button>
+
+
+	<h4>Secondary</h4>
+
+	<button class="ft-button--secondary">Secondary</button>
+	<button class="ft-button--secondary ft-button--sm">Secondary Small</button>
+	<button class="ft-button--secondary ft-button--lg">Secondary Large</button>
+	<button class="ft-button--secondary" disabled>Secondary</button>
+
+
+	<h4>Tertiary</h4>
+
+	<button class="ft-button--tertiary">Tertiary</button>
+	<button class="ft-button--tertiary ft-button--sm">Tertiary</button>
+	<button class="ft-button--tertiary" disabled>Tertiary</button>
+
+
+
+	<h4>Danger</h4>
+	<button class="ft-button--danger">Caution</button>
+	<button class="ft-button--danger-inverse">Caution</button>
+
+
+
+	<h4>Link/Text</h4>
+	<button class="ft-button--link">Link</button>
+	<button class="ft-button--link" disabled>Link</button>
+	<button class="ft-button--txt">Text</button>
+	<button class="ft-button--txt" disabled>Text</button>
+
+	<h4>Block</h4>
+	<button class="ft-button ft-button--block">Block</button>
+	<button class="ft-button--secondary ft-button--block">Block</button>
+
 
 	<section style="margin: 1.0rem 1.5rem">
 
-			<h1>h1. Volt heading</h1>
-			<h2>h2. Volt heading</h2>
-			<h3>h3. Volt heading</h3>
-			<h4>h4. Volt heading</h4>
-			<h5>h5. Volt heading</h5>
-			<h6>h6. Volt heading</h6>
+		<h1>h1. Volt heading</h1>
+		<h2>h2. Volt heading</h2>
+		<h3>h3. Volt heading</h3>
+		<h4>h4. Volt heading</h4>
+		<h5>h5. Volt heading</h5>
+		<h6>h6. Volt heading</h6>
 
-			<p class="h1 fw-400">h1. Volt heading</p>
-			<p class="h2 fw-300">h2. Volt heading</p>
-			<p class="h3">h3. Volt heading</p>
-			<p class="h4">h4. Volt heading</p>
-			<p class="h5">h5. Volt heading</p>
-			<p class="h6">h6. Volt heading</p>
+		<p class="h1 fw-400">h1. Volt heading</p>
+		<p class="h2 fw-300">h2. Volt heading</p>
+		<p class="h3">h3. Volt heading</p>
+		<p class="h4">h4. Volt heading</p>
+		<p class="h5">h5. Volt heading</p>
+		<p class="h6">h6. Volt heading</p>
 	</section>
 
 </body>

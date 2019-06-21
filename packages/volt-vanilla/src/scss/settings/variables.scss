@@ -9,6 +9,32 @@ $ft-font-family-code: SFMono-Regular,'Roboto Mono', Consolas,Liberation Mono,Men
 $font-size-base:              1rem !default; // Assumes the browser default, typically `16px`
 $spacer: $font-size-base !default;
 
+$base-font-size: 16px !default; // Default, Use with em() and rem() functions
+
+
+/* SPACING */
+$spacing-baseline: 1rem !default;
+
+$spacing-4xs: $spacing-baseline * 0.0625 !default;
+$spacing-3xs: $spacing-baseline * 0.125 !default;
+$spacing-2xs: $spacing-baseline * 0.25 !default;
+$spacing-xs: $spacing-baseline * 0.5 !default;
+$spacing-sm: $spacing-baseline * 0.75 !default;
+$spacing-md: $spacing-baseline !default;
+$spacing-lg: $spacing-baseline * 1.5 !default;
+$spacing-xl: $spacing-baseline * 2 !default;
+$spacing-2xl: $spacing-baseline * 2.5 !default;
+$spacing-3xl: $spacing-baseline * 3 !default;
+
+/// @access public
+/// @returns - layout values in rem, see scale above
+$layout-2xs: $spacing-baseline !default;
+$layout-xs: $spacing-baseline * 1.5 !default;
+$layout-sm: $spacing-baseline * 2 !default;
+$layout-md: $spacing-baseline * 3 !default;
+$layout-lg: $spacing-baseline * 4 !default;
+$layout-xl: $spacing-baseline * 6 !default;
+$layout-2xl: $spacing-baseline * 10 !default;
 
 
 $h1-font-size:                $font-size-base * 2.5 !default;
@@ -32,6 +58,51 @@ $shadow-ambient-shadow-opacity: 0.12 !default;
 
 
 /* ACCORDION */
-
 $accordion-transistion-duration: 250ms;
 $accordion-transistion-animate: cubic-bezier(0, 0, 0.38, 0.9);
+
+
+
+/* COLORS */
+$text-01: #272727;
+$text-02: #565656;
+$text-03: #8c8c8c;
+$text-04: #ffffff;
+
+$color-danger: #da1e28;
+$color-success: #24a148;
+$color-warning: #fdd13a;
+$color-info: #054ada;
+
+$brand-01: #2764C4;
+$brand-02: #98C0FF;
+$brand-03: #333F52;
+$brand-04: #A8AAB7;
+
+$field-01: #282828;
+$field-02: #3d3d3d;
+
+$hover-primary: #0353e9;
+
+$ui-01: #f3f3f3;
+$ui-02: #ffffff;
+$ui-03: #dcdcdc;
+$ui-04: #8c8c8c;
+$ui-05: #171717;
+
+$hover-field: #e5e5e5;
+
+
+$duration--fast-01: 70ms;
+
+
+$disabled-01: #f3f3f3;
+$disabled-02: #bebebe;
+$disabled-03: #8c8c8c;
+
+
+$radio-border-width: 1px;
+
+$link-01: $brand-01;
+$visited-link: darken($link-01, 25%);
+

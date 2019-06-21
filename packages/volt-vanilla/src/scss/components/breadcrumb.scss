@@ -1,0 +1,36 @@
+/// Breadcrumb styles
+.ft--breadcrumb {
+	display: flex;
+	flex-wrap: wrap;
+}
+
+.ft--breadcrumb-item {
+	position: relative;
+	display: flex;
+	align-items: center;
+	margin-right: $carbon--spacing-03;
+}
+
+.ft--breadcrumb-item::after {
+content: '/';
+	color: $text-01;
+	margin-left: $carbon--spacing-03;
+}
+
+.ft--breadcrumb--no-trailing-slash .ft--breadcrumb-item:last-child::after {
+	content: '';
+}
+
+.ft--breadcrumb-item:last-child,
+.ft--breadcrumb-item:last-child::after {
+	margin-right: 0;
+}
+
+.ft--breadcrumb .ft--link {
+	white-space: nowrap;
+}
+
+.ft--breadcrumb-item [aria-current='page'],
+.ft--breadcrumb-item.ft--breadcrumb-item--current .ft--link {
+	color: $text-01;
+}

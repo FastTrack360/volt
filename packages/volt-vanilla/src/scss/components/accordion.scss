@@ -61,13 +61,18 @@
 }
 
 .ft--accordion__title {
+	display: block;
 	width: 100%;
 	margin: 0 0 0 1.0rem;
-	font-weight: 600;
-	font-size: 0.95rem;
 	z-index: 0;
 	text-align: left;
 }
+
+.ft--accordion__title-default {
+	font-weight: 600;
+	font-size: 0.95rem;
+}
+
 
 .ft--accordion__content {
   padding: 0 1.0rem;

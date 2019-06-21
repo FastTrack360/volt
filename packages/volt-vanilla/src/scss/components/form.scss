@@ -1,0 +1,94 @@
+//
+// Copyright IBM Corp. 2016, 2018
+//
+// This source code is licensed under the Apache-2.0 license found in the
+// LICENSE file in the root directory of this source tree.
+//
+@import '../mixins/all';
+
+
+.ft--fieldset {
+	@include reset;
+	margin-bottom: $spacing-xl;
+}
+
+.ft--form-item {
+	font-family: $ft-font-family;
+	display: flex;
+	flex-direction: column;
+	flex: 1;
+	align-items: flex-start;
+	margin-bottom: 0.875rem;
+}
+
+.ft--label {
+	@include reset;
+	font-family: $ft-font-family;
+	@include typescale('zeta');
+	color: $text-01;
+	display: inline-block;
+	vertical-align: baseline;
+	margin-bottom: $spacing-xs;
+}
+
+.ft--label--with-helper {
+	margin-bottom: 0;
+}
+
+.ft--label .ft--tooltip__trigger {
+	@include typescale('zeta');
+}
+
+
+
+input[data-invalid],
+textarea[data-invalid],
+select[data-invalid],
+.ft--list-box[data-invalid] {
+	box-shadow: 0 2px 0px 0px $color-danger;
+
+	~ .ft--form-requirement {
+		max-height: rem(200px);
+		display: block;
+	}
+}
+
+// Fix for red ring when input is marked required in Firefox, refs #744
+input:not(output):not([data-invalid]):-moz-ui-invalid {
+	box-shadow: none;
+}
+
+.ft--form-requirement {
+	@include reset;
+	@include typescale('omega');
+	margin: $spacing-sm 0 0;
+	max-height: 0;
+	overflow: hidden;
+	font-weight: 600;
+	line-height: 1.5;
+	display: none;
+
+	&::before {
+		content: '*';
+		display: inline-block;
+		color: $color-danger;
+	}
+}
+
+.ft--form__helper-text {
+	@include typescale('omega');
+	color: $text-02;
+	order: 1;
+	line-height: 1.5;
+	z-index: 0;
+	max-height: 3rem;
+	opacity: 1;
+	margin-bottom: $spacing-xs;
+}
+
+.ft--label--disabled,
+.ft--form__helper-text--disabled {
+	opacity: 0.5;
+}
+
+

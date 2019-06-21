@@ -1,0 +1,126 @@
+
+.ft--number {
+	@include reset;
+	display: flex;
+	flex-direction: column;
+	position: relative;
+}
+
+.ft--number input[type='number'] {
+	// @include type-style('body-short-01');
+	@include focus-outline('reset');
+	font-family: $ft-font-family;
+	box-sizing: border-box;
+	display: inline-flex;
+	width: 100%;
+	min-width: 9.375rem;
+	padding-left: $carbon--spacing-05;
+	padding-right: $carbon--spacing-07;
+	font-weight: 300;
+	height: rem(40px);
+	color: $text-01;
+	background-color: $ui-02;
+
+	box-shadow: 0 1px 0 0 $ui-01;
+
+	border: 1px solid $ui-04;
+
+	transition: background-color $duration--fast-01 motion(standard, productive),
+			outline $duration--fast-01 motion(standard, productive);
+	border-radius: 0.25rem;
+
+	-webkit-appearance: textfield;
+	-moz-appearance: textfield;
+	appearance: textfield;
+
+	&:focus {
+		outline: 2px solid $brand-01;
+		outline-offset: -2px;
+	}
+
+	&:disabled {
+			cursor: not-allowed;
+			background-color: $disabled-01;
+			color: $disabled-03;
+	}
+
+	&:disabled ~ .ft--number__controls {
+			cursor: not-allowed;
+			pointer-events: none;
+	}
+
+	&:disabled ~ .ft--number__controls svg {
+			fill: $disabled-03;
+	}
+
+
+	&::-ms-clear {
+			display: none; // IE: Hide "clear-field" `x` button on input field
+	}
+
+	&::-webkit-inner-spin-button {
+			appearance: none; // Safari: Hide number spinner
+	}
+}
+
+	.ft--number__input-wrapper {
+		display: flex;
+		align-items: center;
+
+	~ .ft--form-requirement {
+			color: $color-danger;
+			font-weight: 400;
+			margin-top: $carbon--spacing-02;
+			overflow: visible;
+
+			&::before {
+				display: none;
+			}
+		}
+	}
+
+	.ft--number__controls {
+		@include reset;
+		position: absolute;
+		right: 0;
+		display: flex;
+		flex-direction: column;
+		justify-content: center;
+		align-items: center;
+	}
+
+	.ft--number__control-btn {
+		@include button-reset;
+		display: inline-flex;
+		justify-content: center;
+		align-items: center;
+		width: rem(32px);
+		height: rem(20px);
+		// color: $icon-01;
+
+		svg {
+			fill: currentColor;
+			position: relative;
+		}
+
+		&.up-icon svg {
+			top: rem(5px);
+		}
+
+		&.down-icon svg {
+			top: rem(-5px);
+		}
+
+		&:focus {
+			cursor: pointer;
+			@include focus-outline;
+			color: $ui-05;
+			outline-width: 2px solid $ui-05;
+			outline-offset: -2px;
+		}
+
+		&:disabled {
+			cursor: not-allowed;
+			color: $disabled-03;
+		}
+	}

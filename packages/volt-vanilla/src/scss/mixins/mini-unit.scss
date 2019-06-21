@@ -1,0 +1,59 @@
+//
+// Copyright IBM Corp. 2018, 2018
+//
+// This source code is licensed under the Apache-2.0 license found in the
+// LICENSE file in the root directory of this source tree.
+//
+
+
+@import '../settings/variables.scss';
+
+/// Convert a given px unit to a rem unit
+/// @param {px} $px
+/// @return {rem}
+@function carbon--rem($px) {
+  @return ($px / $base-font-size) * 1rem;
+}
+
+/// Convert a given px unit to a em unit
+/// @param {px} $px
+/// @return {em}
+@function carbon--em($px) {
+  @return ($px / $base-font-size) * 1em;
+}
+
+// Default mini-unit value
+$carbon--mini-unit-size: 8px !default;
+
+/// Get the value of the corresponding number of units
+/// @param {number} $count the number of units to get the value for
+/// @return rem
+@function carbon--mini-units($count) {
+  @return carbon--rem($carbon--mini-unit-size * $count);
+}
+
+
+/// @access private
+/// @type Map
+/// @group global-layout
+$z-indexes: (
+  modal: 9000,
+  overlay: 8000,
+  dropdown: 7000,
+  header: 6000,
+  footer: 5000,
+  hidden: - 1,
+  overflowHidden: - 1,
+  floating: 10000,
+);
+
+/// @access public
+/// @param {String} $layer - Value from `$z-indexes` map
+/// @group global-layout
+/// @example - scss
+///   .modal {
+///     z-index: z('modal');
+///   }
+@function z($layer) {
+  @return map-get($z-indexes, $layer);
+}

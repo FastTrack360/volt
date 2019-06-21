@@ -1,0 +1,117 @@
+//
+// Copyright IBM Corp. 2016, 2018
+//
+// This source code is licensed under the Apache-2.0 license found in the
+// LICENSE file in the root directory of this source tree.
+//
+
+//-----------------------------
+// Text
+//-----------------------------
+// @import '../../globals/scss/vars';
+// @import '../../globals/scss/css--reset';
+// @import '../../globals/scss/helper-mixins';
+// @import '../../globals/scss/typography';
+// @import '../../globals/scss/vendor/@carbon/elements/scss/import-once/import-once';
+// @import '../form/form';
+
+@import '../mixins/all';
+
+
+.ft--text-input {
+	@include reset;
+	font-family: $ft-font-family;
+	@include typescale('zeta');
+	display: block;
+	width: 100%;
+	height: rem(40px);
+	min-width: rem(300px);
+	padding: 0 $spacing-md;
+	color: $text-01;
+	background-color: $ui-02;
+	box-shadow: 0 1px 0 0 $ui-01;
+	order: 2;
+	border: 1px solid $ui-04;
+	border-radius: 0.25rem;
+
+	& ~ .ft--label {
+		order: 1;
+	}
+
+	&::placeholder {
+		@include placeholder-colors;
+		opacity: 1;
+	}
+
+	&:focus {
+		outline: 2px solid $brand-01;
+		outline-offset: -2px;
+	}
+
+	&[data-invalid],
+	&[data-invalid]:focus {
+		box-shadow: 0 2px 0 0 $color-danger;
+	}
+
+	&:focus ~ .ft--label {
+		color: $brand-01;
+	}
+
+	&[data-invalid]:focus + .ft--label {
+		color: $color-danger;
+	}
+
+	&:disabled {
+		opacity: 0.5;
+		cursor: not-allowed;
+	}
+
+	&:disabled:hover {
+		border: none;
+	}
+
+	& ~ .ft--form-requirement {
+		order: 3;
+		color: $color-danger;
+		font-weight: 400;
+		margin-top: $spacing-2xs;
+
+		&::before {
+			display: none;
+		}
+	}
+
+	&-wrapper svg[hidden] {
+		display: none;
+	}
+
+	&[data-toggle-password-visibility] + .ft--text-input--password__visibility {
+		top: rem(-28px);
+		right: rem(12px);
+		display: flex;
+		justify-content: center;
+		align-self: flex-end;
+		align-items: center;
+		order: 3;
+		height: rem(16px);
+		width: rem(16px);
+		padding: 0;
+		margin-bottom: -1rem;
+		border: 0;
+		background: none;
+		cursor: pointer;
+		outline: inherit;
+
+		svg {
+			fill: $brand-01;
+
+			&:hover {
+				fill: $hover-primary;
+			}
+		}
+	}
+}
+
+.ft--text-input--light {
+	background-color: #3d3d3d;
+}

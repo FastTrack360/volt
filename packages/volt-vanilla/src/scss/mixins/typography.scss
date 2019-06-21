@@ -1,0 +1,27 @@
+
+$typescale-map: (
+  'giga': 4.75rem,
+  'mega': 3.375rem,
+  'alpha': 2.25rem,
+  'beta': 1.75rem,
+  'gamma': 1.25rem,
+  'delta': 1.125rem,
+  'epsilon': 1rem,
+  'zeta': 0.875rem,
+  'omega': 0.75rem,
+  'caption': 0.75rem,
+  'legal': 0.6875rem,
+  'p': 1rem,
+);
+
+@mixin typescale($size) {
+	font-size: map-get($typescale-map, $size);
+}
+
+@function rem($px) {
+  @return ($px / $base-font-size) * 1rem;
+}
+
+@mixin placeholder-colors {
+  color: $text-03;
+}

@@ -1,0 +1,53 @@
+@mixin reset {
+  @if global-variable-exists(css--reset) ==false or $css--reset==false {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    border: 0;
+    font-size: 100%;
+    font-family: inherit;
+    vertical-align: baseline;
+
+    & > *,
+    & > *:before,
+    & > *:after {
+      box-sizing: inherit;
+    }
+  }
+}
+
+
+@mixin button-reset($width: true) {
+  @include reset;
+  display: inline-block;
+  background: none;
+  appearance: none;
+  border: 0;
+  padding: 0;
+  cursor: pointer;
+
+  @if ($width == true) {
+    width: 100%;
+  }
+
+  &::-moz-focus-inner {
+    border: 0;
+  }
+}
+
+
+/// Adds styles to hide content
+/// @access public
+/// @group global-helpers
+@mixin hidden {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  border: 0;
+  visibility: visible;
+  white-space: nowrap;
+}

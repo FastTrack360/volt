@@ -1,0 +1,109 @@
+
+.ft--radio-button-group {
+	display: flex;
+	align-items: center;
+	margin-top: rem(6px);
+}
+
+// vertical radio button
+.ft--radio-button-group--vertical {
+	flex-direction: column;
+
+	.ft--radio-button__label {
+		margin-right: 0;
+	}
+
+	.ft--radio-button__label:not(:last-of-type) {
+		margin-bottom: $carbon--spacing-03;
+	}
+}
+
+.ft--radio-button {
+	@include hidden;
+	visibility: inherit;
+}
+
+.ft--radio-button__label {
+	display: flex;
+	align-items: center;
+	cursor: pointer;
+	margin-right: $carbon--spacing-05;
+}
+
+.ft--radio-button__appearance {
+	@include reset;
+	background-color: transparent;
+	border-radius: 50%;
+	border: $radio-border-width solid $ui-05;
+	flex-shrink: 0;
+	height: rem(18px);
+	width: rem(18px);
+	margin-right: $carbon--spacing-03;
+}
+
+.ft--radio-button:checked + .ft--radio-button__label .ft--radio-button__appearance {
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	border-color: $brand-01;
+
+	&:before {
+		content: '';
+		display: inline-block;
+		position: relative;
+		width: 0.65rem;
+		height: 0.65rem;
+		border-radius: 50%;
+		background-color: $brand-01;
+	}
+}
+
+.ft--radio-button:disabled + .ft--radio-button__label {
+	color: $disabled-02;
+	cursor: not-allowed;
+}
+
+.ft--radio-button:disabled + .ft--radio-button__label .ft--radio-button__appearance,
+.ft--radio-button:disabled:checked + .ft--radio-button__label .ft--radio-button__appearance {
+	border-color: $disabled-02;
+
+	&::before {
+		background-color: $disabled-02;
+	}
+}
+
+// Focus
+
+.ft--radio-button:focus + .ft--radio-button__label .ft--radio-button__appearance {
+	box-shadow: 0 0 0 2px $brand-01;
+	outline: 1px solid transparent;
+}
+
+.ft--radio-button-wrapper .ft--radio-button__label {
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	margin: 0;
+}
+
+.ft--radio-button-wrapper:not(:last-of-type) {
+	margin-right: $carbon--spacing-05;
+}
+
+.ft--radio-button-group--vertical .ft--radio-button-wrapper:not(:last-of-type) {
+	margin-right: 0;
+	margin-bottom: $carbon--spacing-03;
+}
+
+.ft--radio-button-wrapper.ft--radio-button-wrapper--label-right .ft--radio-button__label {
+	flex-direction: row;
+}
+
+.ft--radio-button-wrapper.ft--radio-button-wrapper--label-left .ft--radio-button__label {
+	flex-direction: row-reverse;
+}
+
+.ft--radio-button-wrapper.ft--radio-button-wrapper--label-left .ft--radio-button__appearance {
+	margin-right: 0;
+	margin-left: $carbon--spacing-03;
+}
