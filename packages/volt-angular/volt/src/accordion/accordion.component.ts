@@ -3,10 +3,13 @@ import {
 	Input,
 	ContentChildren,
 	QueryList,
-	AfterContentInit
+	AfterContentInit,
+	EventEmitter,
+	Output
 } from '@angular/core';
 
 import { AccordionItemComponent } from './accordion-item.component';
+import { AccordionService } from './accordion.service';
 
 @Component({
 	selector: 'ft-accordion',
@@ -18,27 +21,42 @@ import { AccordionItemComponent } from './accordion-item.component';
 })
 
 export class AccordionComponent implements AfterContentInit {
-	@ContentChildren(AccordionItemComponent) children: QueryList<AccordionItemComponent>;
+	@ContentChildren(AccordionItemComponent) children: QueryList<
+		AccordionItemComponent
+	>;
 
-	protected _skeleton = false;
+	// protected _skeleton = false;
+	protected openAll = true;
 
 	@Input()
 	set skeleton(value: any) {
-		this._skeleton = value;
-		this.updateChildren();
+		this.openAll = JSON.parse(value);
+		// this.updateChildren();
 	}
 
 	get skeleton(): any {
-		return this._skeleton;
+		return this.openAll;
 	}
+
+	constructor(private accordionService: AccordionService) {}
 
 	ngAfterContentInit() {
 		this.updateChildren();
+		this.accordionService.collapseContent$.subscribe((response: any) => {
+			console.log(this.children);
+			this.children.forEach(child => {
+				if (response && response.id !== child.id) {
+					child.expanded = false;
+				}
+			});
+		});
 	}
 
 	protected updateChildren() {
 		if (this.children) {
-			this.children.toArray().forEach(child => child.skeleton = this.skeleton);
+			this.children.toArray().forEach(child => (child.openAll = this.openAll));
 		}
 	}
+
 }
+

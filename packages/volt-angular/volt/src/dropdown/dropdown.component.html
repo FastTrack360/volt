@@ -1,0 +1,53 @@
+<div
+		class="ft--dropdown ft--list-box"
+		[ngClass]="{
+			'ft--dropdown--light': theme === 'light',
+			'ft--list-box--inline': inline,
+			'ft--skeleton': skeleton,
+			'ft--dropdown--disabled ft--list-box--disabled': disabled
+		}">
+		<button
+			type="button"
+			#dropdownButton
+			class="ft--list-box__field"
+			[ngClass]="{'a': !menuIsClosed}"
+			[attr.aria-expanded]="!menuIsClosed"
+			[attr.aria-disabled]="disabled"
+			(click)="toggleMenu()"
+			(blur)="onBlur()"
+			[disabled]="disabled">
+			<div
+				(click)="clearSelected()"
+				*ngIf="type === 'multi' && getSelectedCount() > 0"
+				class="ft--list-box__selection--multi"
+				title="Clear all selected items">
+				{{getSelectedCount()}}
+				<svg
+					focusable="false"
+					preserveAspectRatio="xMidYMid meet"
+					style="will-change: transform;"
+					role="img"
+					xmlns="http://www.w3.org/2000/svg"
+					width="16"
+					height="16"
+					viewBox="0 0 16 16"
+					aria-hidden="true">
+					<path d="M12 4.7l-.7-.7L8 7.3 4.7 4l-.7.7L7.3 8 4 11.3l.7.7L8 8.7l3.3 3.3.7-.7L8.7 8z"></path>
+				</svg>
+			</div>
+			<span class="ft--list-box__label">{{getDisplayValue() | async}}</span>
+			<!-- <ibm-icon-chevron-down16
+				*ngIf="!skeleton"
+				class="ft--list-box__menu-icon"
+				[attr.aria-label]="menuButtonLabel"
+				[ngClass]="{'ft--list-box__menu-icon--open': !menuIsClosed }">
+			</ibm-icon-chevron-down16> -->
+		</button>
+		<div
+			#dropdownMenu
+			[ngClass]="{
+				'drop-up': dropUp
+			}">
+			<ng-content *ngIf="!menuIsClosed"></ng-content>
+		</div>
+	</div>

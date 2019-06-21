@@ -1,0 +1,45 @@
+<div class="ft--form-item">
+	<div class="ft--dropdown__wrapper ">
+		<label for="dropdown-id" class="ft--label">{{ displayLabel }}</label>
+		<div class="ft--form__helper-text">{{ helperText }}</div>
+
+		<ul id="dropdown-id"
+			class="ft--dropdown"
+			#dropdownListElement
+			(click)="toggleMenu()"
+			[ngClass]="{
+				'ft--dropdown--open': !menuIsClosed,
+				'drop-up': dropUp
+			}">
+
+			<li class="ft--dropdown-text"> {{ dropdownContainerText }}</li>
+			<li class="ft--dropdown__arrow-container">
+				<svg focusable="false" preserveAspectRatio="xMidYMid meet" style="will-change: transform;" xmlns="http://www.w3.org/2000/svg" class="ft--dropdown__arrow" width="16" height="16" viewBox="0 0 16 16" aria-hidden="true"><path d="M8 11L3 6l.7-.7L8 9.6l4.3-4.3.7.7z"></path></svg>
+			</li>
+
+			<li>
+				<ul class="ft--dropdown-list">
+					<li class="ft--dropdown-item">
+						<a class="ft--dropdown-link">Option 1</a>
+					</li>
+					<li class="ft--dropdown-item">
+						<a class="ft--dropdown-link">Option 2</a>
+					</li>
+					<li class="ft--dropdown-item">
+						<a class="ft--dropdown-link">Option 3</a>
+					</li>
+					<li class="ft--dropdown-item">
+						<a class="ft--dropdown-link">Option 4</a>
+					</li>
+					<li class="ft--dropdown-item">
+						<a class="ft--dropdown-link">Option 5</a>
+					</li>
+					<li class="ft--dropdown-item">
+						<a class="ft--dropdown-link">An example option that is really long to show what should be done to handle long text</a>
+					</li>
+				</ul>
+			</li>
+		</ul>
+
+	</div>
+</div>

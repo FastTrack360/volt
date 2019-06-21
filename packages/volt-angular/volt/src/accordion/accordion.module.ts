@@ -3,6 +3,7 @@ import { CommonModule } from '@angular/common';
 
 import { AccordionComponent } from './accordion.component';
 import { AccordionItemComponent } from './accordion-item.component';
+import { AccordionService } from './accordion.service';
 
 
 @NgModule({
@@ -13,6 +14,9 @@ import { AccordionItemComponent } from './accordion-item.component';
 	exports: [
 		AccordionComponent,
 		AccordionItemComponent
+	],
+	providers: [
+		AccordionService
 	],
 	imports: [CommonModule]
 })

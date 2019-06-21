@@ -1,7 +1,7 @@
 import { Component } from '@angular/core';
 
 @Component({
-	selector: 'app-root',
+	selector: 'app-button',
 	templateUrl: './demo-button.component.html'
 })
 

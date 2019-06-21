@@ -8,6 +8,7 @@ import { VoltModule } from '@fasttrack360/ng-volt';
 import { ROUTING } from './app.routes';
 import { DemoButtonComponent } from './demo-button.component/demo-button.component';
 import { DemoAccordionComponent } from './demo-accordion.component/demo-accordion.component';
+import { DemoDropdownComponent } from './demo-dropdown/demo-dropdown.component';
 
 
 @NgModule({
@@ -16,7 +17,8 @@ import { DemoAccordionComponent } from './demo-accordion.component/demo-accordio
 
 		// Demo Components
 		DemoButtonComponent,
-		DemoAccordionComponent
+		DemoAccordionComponent,
+		DemoDropdownComponent
 	],
 	imports: [
 		BrowserModule,
